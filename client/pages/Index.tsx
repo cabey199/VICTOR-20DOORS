@@ -1,12 +1,20 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
-import { BadgeCheck, ShieldCheck, Truck, Star, Quote, DoorOpen, Elevator, Timer } from "lucide-react";
+import { BadgeCheck, ShieldCheck, Truck, Star, DoorOpen } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
-import { useLang } from "@/components/site/LanguageContext";
+
+const IMG = {
+  door1: "https://images.pexels.com/photos/2564866/pexels-photo-2564866.jpeg",
+  door2: "https://images.pexels.com/photos/5845681/pexels-photo-5845681.jpeg",
+  door3: "https://images.pexels.com/photos/965878/pexels-photo-965878.jpeg",
+  elevCabin: "https://images.pexels.com/photos/8243095/pexels-photo-8243095.jpeg",
+  elevButtons: "https://images.pexels.com/photos/7706391/pexels-photo-7706391.jpeg",
+  escalator: "https://images.pexels.com/photos/3605255/pexels-photo-3605255.jpeg",
+};
 
 function useAutoAdvance(api: any, delay = 4000) {
   useEffect(() => {
@@ -36,77 +44,65 @@ const featured = [
   {
     type: "door",
     title: "Luxury Steel Door – Oak Finish",
-    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop",
+    image: IMG.door1,
     specs: "2x1m, sound-proof, fire-resistant",
     price: "9,800 ETB/m²",
   },
   {
     type: "door",
     title: "Security Iron Door – Walnut",
-    image: "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop",
+    image: IMG.door2,
     specs: "1.9x0.9m, reinforced frame",
     price: "9,550 ETB/m²",
   },
   {
     type: "elevator",
     title: "Mona-Go KRC Passenger Elevator",
-    image: "https://images.unsplash.com/photo-1505691723518-36a5ac3b2d39?q=80&w=1200&auto=format&fit=crop",
+    image: IMG.elevCabin,
     specs: "800 kg, 1.6 m/s, ARD/UPS",
     price: "Request Quote",
   },
   {
     type: "elevator",
-    title: "KRC Elevator – Commercial",
-    image: "https://images.unsplash.com/photo-1537721664796-76f77222a5d9?q=80&w=1200&auto=format&fit=crop",
-    specs: "1000 kg, 1.0–2.0 m/s, 10 floors",
+    title: "KRC Escalator – Commercial",
+    image: IMG.escalator,
+    specs: "Heavy-duty, energy saving",
     price: "Request Quote",
   },
 ];
 
-const portfolio = [
-  "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1505691938895-1758d7feb511?q=80&w=800&auto=format&fit=crop",
-  "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=800&auto=format&fit=crop",
-];
+const portfolio = [IMG.door1, IMG.door2, IMG.door3, IMG.elevCabin, IMG.elevButtons, IMG.escalator];
 
 const testimonials = [
   {
     name: "Mekdes T.",
     body: "Installed a beautiful oak-finish security door—looks like wood, feels like a vault.",
-    image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=256&auto=format&fit=crop",
+    image: IMG.door3,
   },
   {
     name: "Abel G.",
     body: "Our office elevator is smooth and quiet. Fast delivery and professional team.",
-    image: "https://images.unsplash.com/photo-1531123897727-8f129e1688ce?q=80&w=256&auto=format&fit=crop",
+    image: IMG.elevCabin,
   },
   {
     name: "Selam A.",
     body: "Great service! The KRC elevator with ARD gives us peace of mind.",
-    image: "https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=256&auto=format&fit=crop",
+    image: IMG.elevButtons,
   },
 ];
 
 export default function Index() {
-  const { t } = useLang();
   const [api, setApi] = useState<any>(null);
   useAutoAdvance(api, 5000);
 
   const heroSlides = useMemo(
-    () => [
-      "https://images.unsplash.com/photo-1505691723518-36a5ac3b2d39?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1600&auto=format&fit=crop",
-      "https://images.unsplash.com/photo-1537721664796-76f77222a5d9?q=80&w=1600&auto=format&fit=crop",
-    ],
+    () => [IMG.elevCabin, IMG.door1, IMG.escalator],
     [],
   );
 
   return (
     <div className="min-h-screen">
-      {/* Hero Section – image carousel background with overlay text and dual CTAs */}
+      {/* Hero Section */}
       <section className="relative isolate">
         <Carousel opts={{ loop: true }} setApi={setApi}>
           <CarouselContent>
@@ -125,17 +121,17 @@ export default function Index() {
         <div className="pointer-events-none absolute inset-0 flex items-center justify-center">
           <div className="pointer-events-auto container mx-auto text-center text-white">
             <h1 className="mx-auto max-w-4xl text-3xl font-extrabold drop-shadow md:text-5xl">
-              {t("heroTitle")}
+              Secure Your Future with Ethiopia’s Trusted Doors & Elevators
             </h1>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <a href="/products#doors">
                 <Button size="lg" className="bg-brand-primary hover:bg-brand-primary/90">
-                  {t("exploreDoors")}
+                  Explore Doors
                 </Button>
               </a>
               <a href="/products#elevators">
                 <Button size="lg" variant="secondary" className="backdrop-blur">
-                  {t("discoverElevators")}
+                  Discover Elevators
                 </Button>
               </a>
             </div>
@@ -237,7 +233,7 @@ export default function Index() {
                   <Card className="h-full">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-3">
-                        <img src={t.image} alt={t.name} className="h-10 w-10 rounded-full object-cover" loading="lazy" />
+                        <img src={t.image} alt={t.name} className="h-10 w-10 rounded object-cover" loading="lazy" />
                         <div>
                           <p className="font-medium">{t.name}</p>
                           <div className="flex text-amber-500" aria-label="5 star rating">
