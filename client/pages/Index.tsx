@@ -233,7 +233,7 @@ export default function Index() {
                   <Card className="h-full">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-3">
-                        <img src={t.image} alt={t.name} className="h-10 w-10 rounded object-cover" loading="lazy" />
+                        <img src={t.image} alt={t.name} className="h-10 w-10 rounded object-cover" loading="lazy" decoding="async" width="40" height="40" />
                         <div>
                           <p className="font-medium">{t.name}</p>
                           <div className="flex text-amber-500" aria-label="5 star rating">
