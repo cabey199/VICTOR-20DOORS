@@ -16,7 +16,8 @@ export function ProductCard({ product }: { product: Product }) {
     product.type === "door"
       ? formatPriceETBPerM2(product.priceETBPerM2)
       : "Request Quote";
-  const warranty = product.type === "door" ? "1-year warranty" : "2-year service";
+  const warranty =
+    product.type === "door" ? "1-year warranty" : "2-year service";
   const leadTime = product.type === "door" ? "25–30 days" : "45–60 days";
 
   return (
@@ -89,16 +90,22 @@ export function ProductCard({ product }: { product: Product }) {
                       </div>
                       <div>
                         <p className="text-xs">Lead Time</p>
-                        <p className="font-medium text-foreground">{leadTime}</p>
+                        <p className="font-medium text-foreground">
+                          {leadTime}
+                        </p>
                       </div>
                       <div>
                         <p className="text-xs">Warranty</p>
-                        <p className="font-medium text-foreground">{warranty}</p>
+                        <p className="font-medium text-foreground">
+                          {warranty}
+                        </p>
                       </div>
                       {product.type === "elevator" && product.capacityKg ? (
                         <div>
                           <p className="text-xs">Capacity</p>
-                          <p className="font-medium text-foreground">{product.capacityKg} kg</p>
+                          <p className="font-medium text-foreground">
+                            {product.capacityKg} kg
+                          </p>
                         </div>
                       ) : null}
                     </div>
@@ -106,7 +113,9 @@ export function ProductCard({ product }: { product: Product }) {
                 </div>
 
                 <div className="rounded-lg border p-4">
-                  <p className="mb-3 font-medium">Place Order / Request Quote</p>
+                  <p className="mb-3 font-medium">
+                    Place Order / Request Quote
+                  </p>
                   <OrderRequestForm product={product} />
                 </div>
               </div>

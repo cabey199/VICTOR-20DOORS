@@ -32,7 +32,9 @@ const OrderSchema = z.object({
 export const handleOrderRequest: RequestHandler = (req, res) => {
   const parse = OrderSchema.safeParse(req.body as OrderRequestBody);
   if (!parse.success) {
-    return res.status(400).json({ error: "Invalid order request", issues: parse.error.issues });
+    return res
+      .status(400)
+      .json({ error: "Invalid order request", issues: parse.error.issues });
   }
 
   const data = parse.data;
