@@ -17,13 +17,13 @@ export type Product = {
 };
 
 const IMG = {
-  door1: "https://images.pexels.com/photos/2564866/pexels-photo-2564866.jpeg",
-  door2: "https://images.pexels.com/photos/5845681/pexels-photo-5845681.jpeg",
-  door3: "https://images.pexels.com/photos/965878/pexels-photo-965878.jpeg",
-  lock: "https://images.pexels.com/photos/792031/pexels-photo-792031.jpeg",
-  elevCabin: "https://images.pexels.com/photos/8243095/pexels-photo-8243095.jpeg",
-  elevButtons: "https://images.pexels.com/photos/7706391/pexels-photo-7706391.jpeg",
-  escalator: "https://images.pexels.com/photos/3605255/pexels-photo-3605255.jpeg",
+  door1: "https://images.pexels.com/photos/2564866/pexels-photo-2564866.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  door2: "https://images.pexels.com/photos/5845681/pexels-photo-5845681.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  door3: "https://images.pexels.com/photos/965878/pexels-photo-965878.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  lock: "https://images.pexels.com/photos/792031/pexels-photo-792031.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  elevCabin: "https://images.pexels.com/photos/8243095/pexels-photo-8243095.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  elevButtons: "https://images.pexels.com/photos/7706391/pexels-photo-7706391.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  escalator: "https://images.pexels.com/photos/3605255/pexels-photo-3605255.jpeg?auto=compress&cs=tinysrgb&w=1200",
 };
 
 export const demoProducts: Product[] = [
