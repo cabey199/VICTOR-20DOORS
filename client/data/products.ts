@@ -16,14 +16,22 @@ export type Product = {
   discountUntil?: string; // ISO date
 };
 
+const IMG = {
+  door1: "https://images.pexels.com/photos/2564866/pexels-photo-2564866.jpeg",
+  door2: "https://images.pexels.com/photos/5845681/pexels-photo-5845681.jpeg",
+  door3: "https://images.pexels.com/photos/965878/pexels-photo-965878.jpeg",
+  lock: "https://images.pexels.com/photos/792031/pexels-photo-792031.jpeg",
+  elevCabin: "https://images.pexels.com/photos/8243095/pexels-photo-8243095.jpeg",
+  elevButtons: "https://images.pexels.com/photos/7706391/pexels-photo-7706391.jpeg",
+  escalator: "https://images.pexels.com/photos/3605255/pexels-photo-3605255.jpeg",
+};
+
 export const demoProducts: Product[] = [
   {
     id: "door-1",
     type: "door",
     title: "Luxury Steel Door – Oak Finish (2x1m)",
-    images: [
-      "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: [IMG.door1],
     specs: ["Sound-proof", "Fire-resistant"],
     priceETBPerM2: 9800,
     features: ["Wood-like finish", "Reinforced frame"],
@@ -33,9 +41,7 @@ export const demoProducts: Product[] = [
     id: "door-2",
     type: "door",
     title: "Security Iron Door – Walnut (1.9x0.9m)",
-    images: [
-      "https://images.unsplash.com/photo-1519710164239-da123dc03ef4?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: [IMG.door2],
     specs: ["Anti-pry locks", "Thermal insulated"],
     priceETBPerM2: 9550,
     features: ["Multi-point locking", "Weather sealed"],
@@ -47,21 +53,37 @@ export const demoProducts: Product[] = [
     id: "door-3",
     type: "door",
     title: "Classic Steel Door – Teak Finish (2.1x1m)",
-    images: [
-      "https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: [IMG.door3],
     specs: ["Powder-coated", "Acoustic core"],
     priceETBPerM2: 9650,
     features: ["Custom handles", "Tamper-proof hinges"],
     available: false,
   },
   {
+    id: "door-4",
+    type: "door",
+    title: "Premium Entrance Door – Double Leaf",
+    images: [IMG.door1],
+    specs: ["Double-leaf", "Heavy-duty hinges"],
+    priceETBPerM2: 11500,
+    features: ["Insulated core", "Decorative panels"],
+    available: true,
+  },
+  {
+    id: "door-5",
+    type: "door",
+    title: "Modern Handle Set – Stainless",
+    images: [IMG.lock],
+    specs: ["Stainless steel", "Scratch resistant"],
+    priceETBPerM2: 9900,
+    features: ["Anti-bacterial coating", "Matte finish"],
+    available: true,
+  },
+  {
     id: "elev-1",
     type: "elevator",
     title: "Mona-Go KRC Passenger Elevator – 800 kg",
-    images: [
-      "https://images.unsplash.com/photo-1505691723518-36a5ac3b2d39?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: [IMG.elevCabin],
     specs: ["1.6 m/s", "ARD/UPS"],
     capacityKg: 800,
     speedMs: 1.6,
@@ -73,14 +95,30 @@ export const demoProducts: Product[] = [
     id: "elev-2",
     type: "elevator",
     title: "KRC Commercial Elevator – 1000 kg",
-    images: [
-      "https://images.unsplash.com/photo-1537721664796-76f77222a5d9?q=80&w=1200&auto=format&fit=crop",
-    ],
+    images: [IMG.escalator],
     specs: ["1.0–2.0 m/s", "Up to 10 floors"],
     capacityKg: 1000,
     speedMs: 2.0,
     floors: 10,
     features: ["Remote monitoring", "Stainless cabin"],
+    available: true,
+  },
+  {
+    id: "elev-3",
+    type: "elevator",
+    title: "KRC Elevator – Control Panel ARD",
+    images: [IMG.elevButtons],
+    specs: ["Panel with ARD", "Emergency power"],
+    features: ["Braille buttons", "LED indicators"],
+    available: true,
+  },
+  {
+    id: "elev-4",
+    type: "elevator",
+    title: "Escalator System – Heavy Duty",
+    images: [IMG.escalator],
+    specs: ["Indoor", "Energy saving"],
+    features: ["Auto start/stop", "Skirt lighting"],
     available: true,
   },
 ];
