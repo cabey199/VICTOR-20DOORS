@@ -186,7 +186,7 @@ export default function Index() {
           {featured.map((p, i) => (
             <Card key={i} className="group overflow-hidden">
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={p.image} alt={p.title} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
+                <img src={p.image} alt={p.title} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" decoding="async" sizes="(max-width: 1024px) 50vw, 25vw" />
                 {p.type === "elevator" ? (
                   <span className="absolute left-3 top-3 rounded bg-black/70 px-2 py-1 text-xs text-white">KRC</span>
                 ) : null}
