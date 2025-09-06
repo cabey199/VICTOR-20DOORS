@@ -261,7 +261,7 @@ export default function Index() {
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           {portfolio.map((src, i) => (
             <figure key={i} className="group relative overflow-hidden rounded-lg border">
-              <img src={src} alt="Project installation" className="h-56 w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
+              <img src={src} alt="Project installation" className="h-56 w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 33vw" />
               <figcaption className="absolute bottom-0 w-full bg-black/50 px-3 py-2 text-xs text-white">Project #{i + 1}</figcaption>
             </figure>
           ))}
