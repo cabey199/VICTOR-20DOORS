@@ -19,11 +19,7 @@ export default function Header() {
           <div className="md:hidden">
             <Sheet>
               <SheetTrigger asChild>
-                <Button
-                  variant="ghost"
-                  size="icon"
-                  aria-label="Open menu"
-                >
+                <Button variant="ghost" size="icon" aria-label="Open menu">
                   <Menu className="h-5 w-5" aria-hidden />
                 </Button>
               </SheetTrigger>
@@ -39,7 +35,10 @@ export default function Header() {
                     </p>
                   </div>
                 </div>
-                <nav aria-label="Mobile navigation" className="flex flex-col gap-2">
+                <nav
+                  aria-label="Mobile navigation"
+                  className="flex flex-col gap-2"
+                >
                   {links.map((item) => (
                     <a
                       key={item.to}
@@ -51,7 +50,10 @@ export default function Header() {
                   ))}
                 </nav>
                 <div className="mt-6">
-                  <a href="tel:+251941183695" aria-label="Call now +251 94 118 3695">
+                  <a
+                    href="tel:+251941183695"
+                    aria-label="Call now +251 94 118 3695"
+                  >
                     <Button className="w-full bg-brand-primary hover:bg-brand-primary/90">
                       <Phone className="h-4 w-4" aria-hidden />
                       <span className="ml-2">Call Now</span>
