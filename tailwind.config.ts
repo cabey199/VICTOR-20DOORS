@@ -57,6 +57,13 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Brand palette
+        brand: {
+          primary: "hsl(var(--brand-primary))", // trust blue
+          wood: "hsl(var(--brand-wood))", // warm wood tone
+          metal: "hsl(var(--brand-metal))", // metallic gray
+          accent: "hsl(var(--brand-accent))", // highlight
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -80,10 +87,19 @@ export default {
             height: "0",
           },
         },
+        float: {
+          "0%": { transform: "translateY(0)" },
+          "50%": { transform: "translateY(-4px)" },
+          "100%": { transform: "translateY(0)" },
+        },
       },
       animation: {
         "accordion-down": "accordion-down 0.2s ease-out",
         "accordion-up": "accordion-up 0.2s ease-out",
+        float: "float 3s ease-in-out infinite",
+      },
+      fontFamily: {
+        sans: ["Poppins", "ui-sans-serif", "system-ui", "-apple-system", "Segoe UI", "Roboto", "Helvetica", "Arial", "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol"],
       },
     },
   },
