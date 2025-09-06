@@ -33,7 +33,6 @@ export default function Header() {
           ))}
         </nav>
         <div className="flex items-center gap-2">
-          <LanguageToggle />
           <ThemeToggle />
           <a href="tel:+251941183695" aria-label="Call now +251 94 118 3695">
             <Button className="hidden sm:inline-flex bg-brand-primary hover:bg-brand-primary/90">
