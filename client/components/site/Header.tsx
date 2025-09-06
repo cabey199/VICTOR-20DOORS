@@ -1,7 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Phone, ShieldCheck, DoorOpen } from "lucide-react";
 import { ThemeToggle } from "./ThemeToggle";
-import { LanguageToggle } from "./LanguageToggle";
 
 export default function Header() {
   return (
