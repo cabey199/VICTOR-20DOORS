@@ -7,13 +7,18 @@ import {
   DialogTitle,
   DialogTrigger,
 } from "@/components/ui/dialog";
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Product, formatPriceETBPerM2 } from "@/data/products";
+import { OrderRequestForm } from "./OrderRequestForm";
 
 export function ProductCard({ product }: { product: Product }) {
   const price =
     product.type === "door"
       ? formatPriceETBPerM2(product.priceETBPerM2)
       : "Request Quote";
+  const warranty = product.type === "door" ? "1-year warranty" : "2-year service";
+  const leadTime = product.type === "door" ? "25–30 days" : "45–60 days";
+
   return (
     <Card className="group overflow-hidden">
       <div className="relative aspect-[4/3] overflow-hidden">
@@ -47,31 +52,62 @@ export function ProductCard({ product }: { product: Product }) {
           <p className="font-semibold">{price}</p>
           <Dialog>
             <DialogTrigger asChild>
-              <Button size="sm">View Details</Button>
+              <Button size="sm">View & Order</Button>
             </DialogTrigger>
-            <DialogContent>
+            <DialogContent title={`${product.title} — Details & Order`}>
               <DialogHeader>
-                <DialogTitle>{product.title}</DialogTitle>
+                <DialogTitle>{product.title} — Details & Order</DialogTitle>
               </DialogHeader>
-              <div className="grid gap-4 md:grid-cols-2">
-                <img
-                  src={product.images[0]}
-                  alt={product.title}
-                  className="w-full rounded-md object-cover"
-                />
-                <div className="space-y-2 text-sm">
-                  <p className="font-medium">Key Specs</p>
-                  <ul className="list-disc pl-5 text-muted-foreground">
-                    {product.specs.map((s) => (
-                      <li key={s}>{s}</li>
-                    ))}
-                  </ul>
-                  <p className="font-medium mt-4">Features</p>
-                  <ul className="list-disc pl-5 text-muted-foreground">
-                    {product.features.map((s) => (
-                      <li key={s}>{s}</li>
-                    ))}
-                  </ul>
+              <div className="grid gap-6">
+                <div className="grid gap-4 md:grid-cols-2">
+                  <img
+                    src={product.images[0]}
+                    alt={product.title}
+                    className="w-full rounded-md object-cover"
+                  />
+                  <div className="space-y-3 text-sm">
+                    <div>
+                      <p className="font-medium">Key Specs</p>
+                      <ul className="list-disc pl-5 text-muted-foreground">
+                        {product.specs.map((s) => (
+                          <li key={s}>{s}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div>
+                      <p className="font-medium">Features</p>
+                      <ul className="list-disc pl-5 text-muted-foreground">
+                        {product.features.map((s) => (
+                          <li key={s}>{s}</li>
+                        ))}
+                      </ul>
+                    </div>
+                    <div className="grid grid-cols-2 gap-2 text-muted-foreground">
+                      <div>
+                        <p className="text-xs">Price</p>
+                        <p className="font-medium text-foreground">{price}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs">Lead Time</p>
+                        <p className="font-medium text-foreground">{leadTime}</p>
+                      </div>
+                      <div>
+                        <p className="text-xs">Warranty</p>
+                        <p className="font-medium text-foreground">{warranty}</p>
+                      </div>
+                      {product.type === "elevator" && product.capacityKg ? (
+                        <div>
+                          <p className="text-xs">Capacity</p>
+                          <p className="font-medium text-foreground">{product.capacityKg} kg</p>
+                        </div>
+                      ) : null}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="rounded-lg border p-4">
+                  <p className="mb-3 font-medium">Place Order / Request Quote</p>
+                  <OrderRequestForm product={product} />
                 </div>
               </div>
             </DialogContent>
