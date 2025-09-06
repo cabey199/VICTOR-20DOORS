@@ -8,7 +8,7 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <Card className="group overflow-hidden">
       <div className="relative aspect-[4/3] overflow-hidden">
-        <img src={product.images[0]} alt={product.title} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" />
+        <img src={product.images[0]} alt={product.title} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" decoding="async" sizes="(max-width: 1024px) 50vw, 25vw" />
         {product.badge ? (
           <span className="absolute left-3 top-3 rounded bg-black/70 px-2 py-1 text-xs text-white">{product.badge}</span>
         ) : null}
