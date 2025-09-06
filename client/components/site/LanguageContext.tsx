@@ -13,7 +13,10 @@ const strings: Dictionary = {
   discoverElevators: { en: "Discover Elevators", am: "ኤሌቬተሮችን ያግኙ" },
   requestQuote: { en: "Request Quote", am: "ጥራት ይጠይቁ" },
   featuredProducts: { en: "Featured Products", am: "የተለዩ ምርቶች" },
-  trustTitle: { en: "Trusted by builders across Ethiopia", am: "በኢትዮጵያ ውስጥ በአብረተኛ ተቋማት የታመነ" },
+  trustTitle: {
+    en: "Trusted by builders across Ethiopia",
+    am: "በኢትዮጵያ ውስጥ በአብረተኛ ተቋማት የታመነ",
+  },
   testimonials: { en: "What clients say", am: "የደንበኞች ምክር" },
   portfolio: { en: "Recent installations", am: "የቅርብ ጊዜ መጫኛዎች" },
 };
@@ -29,11 +32,10 @@ const LangContext = createContext<LangContextType | null>(null);
 export function LangProvider({ children }: { children: ReactNode }) {
   const [lang, setLang] = useState<Language>("en");
   const t = useMemo(
-    () =>
-      (key: keyof typeof strings) => {
-        const entry = strings[key];
-        return entry ? entry[lang] : "";
-      },
+    () => (key: keyof typeof strings) => {
+      const entry = strings[key];
+      return entry ? entry[lang] : "";
+    },
     [lang],
   );
 

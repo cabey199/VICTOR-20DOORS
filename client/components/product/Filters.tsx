@@ -1,6 +1,12 @@
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { Slider } from "@/components/ui/slider";
 
 export type FiltersState = {
@@ -12,16 +18,32 @@ export type FiltersState = {
   sort: "price-asc" | "price-desc" | "newest";
 };
 
-export function Filters({ value, onChange }: { value: FiltersState; onChange: (s: FiltersState) => void }) {
+export function Filters({
+  value,
+  onChange,
+}: {
+  value: FiltersState;
+  onChange: (s: FiltersState) => void;
+}) {
   return (
     <div className="grid gap-4 rounded-lg border bg-card p-4 md:grid-cols-4">
       <div>
         <Label htmlFor="search">Search</Label>
-        <Input id="search" placeholder="Search products" value={value.search} onChange={(e) => onChange({ ...value, search: e.target.value })} />
+        <Input
+          id="search"
+          placeholder="Search products"
+          value={value.search}
+          onChange={(e) => onChange({ ...value, search: e.target.value })}
+        />
       </div>
       <div>
         <Label>Type</Label>
-        <Select value={value.type} onValueChange={(v) => onChange({ ...value, type: v as FiltersState["type"] })}>
+        <Select
+          value={value.type}
+          onValueChange={(v) =>
+            onChange({ ...value, type: v as FiltersState["type"] })
+          }
+        >
           <SelectTrigger>
             <SelectValue placeholder="All" />
           </SelectTrigger>
@@ -34,7 +56,12 @@ export function Filters({ value, onChange }: { value: FiltersState; onChange: (s
       </div>
       <div>
         <Label>Sort</Label>
-        <Select value={value.sort} onValueChange={(v) => onChange({ ...value, sort: v as FiltersState["sort"] })}>
+        <Select
+          value={value.sort}
+          onValueChange={(v) =>
+            onChange({ ...value, sort: v as FiltersState["sort"] })
+          }
+        >
           <SelectTrigger>
             <SelectValue placeholder="Sort" />
           </SelectTrigger>
@@ -47,8 +74,16 @@ export function Filters({ value, onChange }: { value: FiltersState; onChange: (s
       </div>
       <div>
         <Label>Max Price (ETB/m²)</Label>
-        <Slider value={[value.maxPrice]} onValueChange={([v]) => onChange({ ...value, maxPrice: v })} min={5000} max={20000} step={250} />
-        <div className="text-xs text-muted-foreground mt-1">Up to {value.maxPrice.toLocaleString()}</div>
+        <Slider
+          value={[value.maxPrice]}
+          onValueChange={([v]) => onChange({ ...value, maxPrice: v })}
+          min={5000}
+          max={20000}
+          step={250}
+        />
+        <div className="text-xs text-muted-foreground mt-1">
+          Up to {value.maxPrice.toLocaleString()}
+        </div>
       </div>
     </div>
   );

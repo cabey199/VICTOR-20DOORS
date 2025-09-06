@@ -12,7 +12,11 @@ export function ThemeToggle() {
       size="icon"
       onClick={() => setTheme(isDark ? "light" : "dark")}
     >
-      {isDark ? <Sun aria-hidden className="h-4 w-4" /> : <Moon aria-hidden className="h-4 w-4" />}
+      {isDark ? (
+        <Sun aria-hidden className="h-4 w-4" />
+      ) : (
+        <Moon aria-hidden className="h-4 w-4" />
+      )}
     </Button>
   );
 }

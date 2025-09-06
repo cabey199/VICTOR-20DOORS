@@ -1,19 +1,37 @@
 import { useEffect, useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import { BadgeCheck, ShieldCheck, Truck, Star, DoorOpen } from "lucide-react";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 const IMG = {
-  door1: "https://images.pexels.com/photos/2564866/pexels-photo-2564866.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  door2: "https://images.pexels.com/photos/5845681/pexels-photo-5845681.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  door3: "https://images.pexels.com/photos/965878/pexels-photo-965878.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  elevCabin: "https://images.pexels.com/photos/8243095/pexels-photo-8243095.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  elevButtons: "https://images.pexels.com/photos/7706391/pexels-photo-7706391.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  escalator: "https://images.pexels.com/photos/3605255/pexels-photo-3605255.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  door1:
+    "https://images.pexels.com/photos/2564866/pexels-photo-2564866.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  door2:
+    "https://images.pexels.com/photos/5845681/pexels-photo-5845681.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  door3:
+    "https://images.pexels.com/photos/965878/pexels-photo-965878.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  elevCabin:
+    "https://images.pexels.com/photos/8243095/pexels-photo-8243095.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  elevButtons:
+    "https://images.pexels.com/photos/7706391/pexels-photo-7706391.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  escalator:
+    "https://images.pexels.com/photos/3605255/pexels-photo-3605255.jpeg?auto=compress&cs=tinysrgb&w=1600",
 };
 
 function useAutoAdvance(api: any, delay = 4000) {
@@ -71,7 +89,14 @@ const featured = [
   },
 ];
 
-const portfolio = [IMG.door1, IMG.door2, IMG.door3, IMG.elevCabin, IMG.elevButtons, IMG.escalator];
+const portfolio = [
+  IMG.door1,
+  IMG.door2,
+  IMG.door3,
+  IMG.elevCabin,
+  IMG.elevButtons,
+  IMG.escalator,
+];
 
 const testimonials = [
   {
@@ -109,7 +134,14 @@ export default function Index() {
             {heroSlides.map((src, i) => (
               <CarouselItem key={i} className="">
                 <div className="relative h-[68vh] md:h-[80vh] w-full overflow-hidden">
-                  <img src={src} alt="Premium doors and elevators" className="h-full w-full object-cover" loading={i === 0 ? "eager" : "lazy"} decoding={i === 0 ? "sync" : "async"} fetchPriority={i === 0 ? "high" : "low"} />
+                  <img
+                    src={src}
+                    alt="Premium doors and elevators"
+                    className="h-full w-full object-cover"
+                    loading={i === 0 ? "eager" : "lazy"}
+                    decoding={i === 0 ? "sync" : "async"}
+                    fetchPriority={i === 0 ? "high" : "low"}
+                  />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
                 </div>
               </CarouselItem>
@@ -125,7 +157,10 @@ export default function Index() {
             </h1>
             <div className="mt-6 flex flex-wrap items-center justify-center gap-3">
               <a href="/products#doors">
-                <Button size="lg" className="bg-brand-primary hover:bg-brand-primary/90">
+                <Button
+                  size="lg"
+                  className="bg-brand-primary hover:bg-brand-primary/90"
+                >
                   Explore Doors
                 </Button>
               </a>
@@ -152,7 +187,9 @@ export default function Index() {
           <BadgeCheck className="text-brand-metal" />
           <div>
             <p className="font-semibold">1-Year Warranty</p>
-            <p className="text-xs text-muted-foreground">On selected products</p>
+            <p className="text-xs text-muted-foreground">
+              On selected products
+            </p>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-lg border bg-card p-4 shadow-sm">
@@ -165,7 +202,9 @@ export default function Index() {
         <div className="flex items-center gap-3 rounded-lg border bg-card p-4 shadow-sm">
           <DoorOpen className="text-brand-metal" />
           <div>
-            <p className="font-semibold"><Counter to={500} />+ Doors Installed</p>
+            <p className="font-semibold">
+              <Counter to={500} />+ Doors Installed
+            </p>
             <p className="text-xs text-muted-foreground">Across Ethiopia</p>
           </div>
         </div>
@@ -176,7 +215,9 @@ export default function Index() {
         <div className="mb-8 flex items-end justify-between">
           <div>
             <h2 className="text-2xl font-bold">Featured Products</h2>
-            <p className="text-sm text-muted-foreground">High-quality doors and KRC elevators</p>
+            <p className="text-sm text-muted-foreground">
+              High-quality doors and KRC elevators
+            </p>
           </div>
           <a href="/products">
             <Button variant="outline">View All</Button>
@@ -186,9 +227,18 @@ export default function Index() {
           {featured.map((p, i) => (
             <Card key={i} className="group overflow-hidden">
               <div className="relative aspect-[4/3] overflow-hidden">
-                <img src={p.image} alt={p.title} className="h-full w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" decoding="async" sizes="(max-width: 1024px) 50vw, 25vw" />
+                <img
+                  src={p.image}
+                  alt={p.title}
+                  className="h-full w-full object-cover transition duration-300 group-hover:scale-105"
+                  loading="lazy"
+                  decoding="async"
+                  sizes="(max-width: 1024px) 50vw, 25vw"
+                />
                 {p.type === "elevator" ? (
-                  <span className="absolute left-3 top-3 rounded bg-black/70 px-2 py-1 text-xs text-white">KRC</span>
+                  <span className="absolute left-3 top-3 rounded bg-black/70 px-2 py-1 text-xs text-white">
+                    KRC
+                  </span>
                 ) : null}
               </div>
               <CardHeader className="pb-2">
@@ -206,11 +256,23 @@ export default function Index() {
                       <DialogHeader>
                         <DialogTitle>Request a Quote</DialogTitle>
                       </DialogHeader>
-                      <form className="space-y-3" onSubmit={(e) => e.preventDefault()} aria-label="Request quote form">
+                      <form
+                        className="space-y-3"
+                        onSubmit={(e) => e.preventDefault()}
+                        aria-label="Request quote form"
+                      >
                         <Input placeholder="Name" required aria-label="Name" />
-                        <Input type="email" placeholder="Email" required aria-label="Email" />
+                        <Input
+                          type="email"
+                          placeholder="Email"
+                          required
+                          aria-label="Email"
+                        />
                         <Input placeholder="Phone" aria-label="Phone" />
-                        <Textarea placeholder={`Details about: ${p.title}`} aria-label="Details" />
+                        <Textarea
+                          placeholder={`Details about: ${p.title}`}
+                          aria-label="Details"
+                        />
                         <Button type="submit">Send Request</Button>
                       </form>
                     </DialogContent>
@@ -233,17 +295,33 @@ export default function Index() {
                   <Card className="h-full">
                     <CardContent className="p-6">
                       <div className="flex items-center gap-3">
-                        <img src={t.image} alt={t.name} className="h-10 w-10 rounded object-cover" loading="lazy" decoding="async" width="40" height="40" />
+                        <img
+                          src={t.image}
+                          alt={t.name}
+                          className="h-10 w-10 rounded object-cover"
+                          loading="lazy"
+                          decoding="async"
+                          width="40"
+                          height="40"
+                        />
                         <div>
                           <p className="font-medium">{t.name}</p>
-                          <div className="flex text-amber-500" aria-label="5 star rating">
+                          <div
+                            className="flex text-amber-500"
+                            aria-label="5 star rating"
+                          >
                             {Array.from({ length: 5 }).map((_, idx) => (
-                              <Star key={idx} className="h-4 w-4 fill-amber-400" />
+                              <Star
+                                key={idx}
+                                className="h-4 w-4 fill-amber-400"
+                              />
                             ))}
                           </div>
                         </div>
                       </div>
-                      <p className="mt-4 text-sm text-muted-foreground">{t.body}</p>
+                      <p className="mt-4 text-sm text-muted-foreground">
+                        {t.body}
+                      </p>
                     </CardContent>
                   </Card>
                 </CarouselItem>
@@ -260,9 +338,21 @@ export default function Index() {
         <h2 className="text-2xl font-bold mb-6">Recent Installations</h2>
         <div className="grid gap-4 sm:grid-cols-2 md:grid-cols-3">
           {portfolio.map((src, i) => (
-            <figure key={i} className="group relative overflow-hidden rounded-lg border">
-              <img src={src} alt="Project installation" className="h-56 w-full object-cover transition duration-300 group-hover:scale-105" loading="lazy" decoding="async" sizes="(max-width: 768px) 100vw, 33vw" />
-              <figcaption className="absolute bottom-0 w-full bg-black/50 px-3 py-2 text-xs text-white">Project #{i + 1}</figcaption>
+            <figure
+              key={i}
+              className="group relative overflow-hidden rounded-lg border"
+            >
+              <img
+                src={src}
+                alt="Project installation"
+                className="h-56 w-full object-cover transition duration-300 group-hover:scale-105"
+                loading="lazy"
+                decoding="async"
+                sizes="(max-width: 768px) 100vw, 33vw"
+              />
+              <figcaption className="absolute bottom-0 w-full bg-black/50 px-3 py-2 text-xs text-white">
+                Project #{i + 1}
+              </figcaption>
             </figure>
           ))}
         </div>

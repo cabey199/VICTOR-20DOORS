@@ -1,5 +1,11 @@
 import { Button } from "@/components/ui/button";
-import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from "@/components/ui/dialog";
+import {
+  Dialog,
+  DialogContent,
+  DialogHeader,
+  DialogTitle,
+  DialogTrigger,
+} from "@/components/ui/dialog";
 import { Product } from "@/data/products";
 
 export function CompareBar({ selected }: { selected: Product[] }) {
@@ -20,7 +26,9 @@ export function CompareBar({ selected }: { selected: Product[] }) {
                 <tr>
                   <th className="text-left">Spec</th>
                   {selected.map((p) => (
-                    <th key={p.id} className="text-left">{p.title}</th>
+                    <th key={p.id} className="text-left">
+                      {p.title}
+                    </th>
                   ))}
                 </tr>
               </thead>

@@ -29,9 +29,18 @@ export default function Products() {
       const q = filters.search.toLowerCase();
       list = list.filter((p) => p.title.toLowerCase().includes(q));
     }
-    list = list.filter((p) => (p.priceETBPerM2 ?? 0) <= filters.maxPrice || p.type === "elevator");
-    if (filters.sort === "price-asc") list = [...list].sort((a, b) => (a.priceETBPerM2 ?? 9e9) - (b.priceETBPerM2 ?? 9e9));
-    if (filters.sort === "price-desc") list = [...list].sort((a, b) => (b.priceETBPerM2 ?? 0) - (a.priceETBPerM2 ?? 0));
+    list = list.filter(
+      (p) =>
+        (p.priceETBPerM2 ?? 0) <= filters.maxPrice || p.type === "elevator",
+    );
+    if (filters.sort === "price-asc")
+      list = [...list].sort(
+        (a, b) => (a.priceETBPerM2 ?? 9e9) - (b.priceETBPerM2 ?? 9e9),
+      );
+    if (filters.sort === "price-desc")
+      list = [...list].sort(
+        (a, b) => (b.priceETBPerM2 ?? 0) - (a.priceETBPerM2 ?? 0),
+      );
     return list;
   }, [filters]);
 
@@ -49,13 +58,30 @@ export default function Products() {
       <div className="flex items-end justify-between gap-4">
         <div>
           <h1 className="text-2xl font-bold">Products Catalog</h1>
-          <p className="text-sm text-muted-foreground">Browse doors and elevators. Use filters, sort, and compare.</p>
+          <p className="text-sm text-muted-foreground">
+            Browse doors and elevators. Use filters, sort, and compare.
+          </p>
         </div>
         <Tabs defaultValue="all">
           <TabsList>
-            <TabsTrigger value="all" onClick={() => setFilters({ ...filters, type: "all" })}>All</TabsTrigger>
-            <TabsTrigger value="doors" onClick={() => setFilters({ ...filters, type: "door" })}>Doors</TabsTrigger>
-            <TabsTrigger value="elevators" onClick={() => setFilters({ ...filters, type: "elevator" })}>Elevators</TabsTrigger>
+            <TabsTrigger
+              value="all"
+              onClick={() => setFilters({ ...filters, type: "all" })}
+            >
+              All
+            </TabsTrigger>
+            <TabsTrigger
+              value="doors"
+              onClick={() => setFilters({ ...filters, type: "door" })}
+            >
+              Doors
+            </TabsTrigger>
+            <TabsTrigger
+              value="elevators"
+              onClick={() => setFilters({ ...filters, type: "elevator" })}
+            >
+              Elevators
+            </TabsTrigger>
           </TabsList>
           <TabsContent value="all" />
           <TabsContent value="doors" />
@@ -64,14 +90,25 @@ export default function Products() {
       </div>
 
       <div className="mt-6">
-        <Filters value={filters} onChange={(v) => { setPage(1); setFilters(v); }} />
+        <Filters
+          value={filters}
+          onChange={(v) => {
+            setPage(1);
+            setFilters(v);
+          }}
+        />
       </div>
 
       <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
         {pageItems.map((p) => (
           <div key={p.id} className="relative">
             <label className="absolute left-2 top-2 z-10 rounded-md bg-background/80 p-1 shadow">
-              <Checkbox checked={!!selected[p.id]} onCheckedChange={(v) => setSelected({ ...selected, [p.id]: Boolean(v) })} />
+              <Checkbox
+                checked={!!selected[p.id]}
+                onCheckedChange={(v) =>
+                  setSelected({ ...selected, [p.id]: Boolean(v) })
+                }
+              />
             </label>
             <ProductCard product={p} />
           </div>
@@ -79,10 +116,23 @@ export default function Products() {
       </div>
 
       <div className="mt-8 flex items-center justify-between">
-        <div className="text-sm text-muted-foreground">Page {page} of {pageCount}</div>
+        <div className="text-sm text-muted-foreground">
+          Page {page} of {pageCount}
+        </div>
         <div className="flex gap-2">
-          <Button variant="outline" disabled={page === 1} onClick={() => setPage((p) => Math.max(1, p - 1))}>Prev</Button>
-          <Button disabled={page === pageCount} onClick={() => setPage((p) => Math.min(pageCount, p + 1))}>Next</Button>
+          <Button
+            variant="outline"
+            disabled={page === 1}
+            onClick={() => setPage((p) => Math.max(1, p - 1))}
+          >
+            Prev
+          </Button>
+          <Button
+            disabled={page === pageCount}
+            onClick={() => setPage((p) => Math.min(pageCount, p + 1))}
+          >
+            Next
+          </Button>
         </div>
       </div>
 
