@@ -35,7 +35,7 @@ export default function About() {
         {[{ name: "Behailu", role: "Sales Manager" }, { name: "Mekdes", role: "Operations" }, { name: "Abel", role: "Engineer" }].map((m) => (
           <Card key={m.name} className="transition hover:shadow-lg">
             <CardContent className="p-6 text-center">
-              <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?q=80&w=300&auto=format&fit=crop" alt={m.name} className="mx-auto h-24 w-24 rounded-full object-cover" />
+              <img src="https://images.pexels.com/photos/2564866/pexels-photo-2564866.jpeg" alt={m.name} className="mx-auto h-24 w-24 rounded-full object-cover" />
               <p className="mt-3 font-medium">{m.name}</p>
               <p className="text-sm text-muted-foreground">{m.role}</p>
               <p className="mt-3 text-sm">Committed to quality, trust, and innovation.</p>
