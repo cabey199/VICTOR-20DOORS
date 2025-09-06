@@ -109,7 +109,7 @@ export default function Index() {
             {heroSlides.map((src, i) => (
               <CarouselItem key={i} className="">
                 <div className="relative h-[68vh] md:h-[80vh] w-full overflow-hidden">
-                  <img src={src} alt="Premium doors and elevators" className="h-full w-full object-cover" loading="eager" />
+                  <img src={src} alt="Premium doors and elevators" className="h-full w-full object-cover" loading={i === 0 ? "eager" : "lazy"} decoding={i === 0 ? "sync" : "async"} fetchPriority={i === 0 ? "high" : "low"} />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-black/20" />
                 </div>
               </CarouselItem>
