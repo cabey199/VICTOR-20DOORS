@@ -36,9 +36,15 @@ function exportCSV(rows: Product[]) {
 }
 
 export default function Admin() {
+  const DEMO_USER = "admin";
+  const DEMO_PASS = "admin123";
+  const DEMO_2FA = "000000"; // optional
+
   const [authed, setAuthed] = useState(() => sessionStorage.getItem("vdme.authed") === "1");
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
+  const [code, setCode] = useState("");
+  const [error, setError] = useState<string | null>(null);
   const [items, setItems] = useLocalProducts();
 
   const stats = useMemo(() => {
@@ -60,19 +66,24 @@ export default function Admin() {
               className="space-y-3"
               onSubmit={(e) => {
                 e.preventDefault();
-                if (username && password) {
+                if (username === DEMO_USER && password === DEMO_PASS && (code === "" || code === DEMO_2FA)) {
                   sessionStorage.setItem("vdme.authed", "1");
                   setAuthed(true);
+                  setError(null);
+                } else {
+                  setError("Invalid credentials");
                 }
               }}
             >
               <Input placeholder="Username" value={username} onChange={(e) => setUsername(e.target.value)} required />
               <Input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)} required />
-              <Input placeholder="2FA Code (placeholder)" />
+              <Input placeholder="2FA Code (000000 demo)" value={code} onChange={(e) => setCode(e.target.value)} />
+              {error && <div className="text-sm text-red-600">{error}</div>}
               <div className="flex justify-between">
                 <Button type="submit">Login</Button>
-                <Button type="button" variant="outline" onClick={() => { setUsername(""); setPassword(""); }}>Reset</Button>
+                <Button type="button" variant="outline" onClick={() => { setUsername(""); setPassword(""); setCode(""); setError(null); }}>Reset</Button>
               </div>
+              <div className="text-xs text-muted-foreground">Demo credentials — Username: <code>{DEMO_USER}</code>, Password: <code>{DEMO_PASS}</code>, 2FA: <code>{DEMO_2FA}</code> (optional)</div>
             </form>
           </CardContent>
         </Card>
