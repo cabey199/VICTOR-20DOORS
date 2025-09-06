@@ -124,6 +124,13 @@ export default function Contact() {
                 <p><strong>Phone:</strong> <a className="text-primary" href="tel:+251941183695">+251 94 118 3695</a>, <a className="text-primary" href="tel:+251991227010">+251 99 122 7010</a></p>
                 <p><strong>Telegram:</strong> <a className="text-primary" href="https://t.me/victordoorplc" target="_blank" rel="noreferrer">@victordoorplc</a></p>
               </div>
+              <div className="mt-4 flex flex-wrap gap-2">
+                <a href="https://www.google.com/maps/dir/?api=1&destination=Addis+Ababa+Ethiopia" target="_blank" rel="noreferrer" className="rounded-md bg-primary px-3 py-2 text-primary-foreground hover:bg-primary/90">Get Directions</a>
+                <a href="tel:+251941183695" className="rounded-md border px-3 py-2 hover:bg-accent">Call +251 94 118 3695</a>
+                <a href="tel:+251991227010" className="rounded-md border px-3 py-2 hover:bg-accent">Call +251 99 122 7010</a>
+                <a href="https://t.me/victordoorplc" target="_blank" rel="noreferrer" className="rounded-md border px-3 py-2 hover:bg-accent">Telegram</a>
+                <a href="https://www.facebook.com/" target="_blank" rel="noreferrer" className="rounded-md border px-3 py-2 hover:bg-accent">Facebook</a>
+              </div>
             </CardContent>
           </Card>
         </div>
