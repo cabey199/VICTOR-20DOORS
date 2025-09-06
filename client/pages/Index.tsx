@@ -8,12 +8,12 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 const IMG = {
-  door1: "https://images.pexels.com/photos/2564866/pexels-photo-2564866.jpeg",
-  door2: "https://images.pexels.com/photos/5845681/pexels-photo-5845681.jpeg",
-  door3: "https://images.pexels.com/photos/965878/pexels-photo-965878.jpeg",
-  elevCabin: "https://images.pexels.com/photos/8243095/pexels-photo-8243095.jpeg",
-  elevButtons: "https://images.pexels.com/photos/7706391/pexels-photo-7706391.jpeg",
-  escalator: "https://images.pexels.com/photos/3605255/pexels-photo-3605255.jpeg",
+  door1: "https://images.pexels.com/photos/2564866/pexels-photo-2564866.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  door2: "https://images.pexels.com/photos/5845681/pexels-photo-5845681.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  door3: "https://images.pexels.com/photos/965878/pexels-photo-965878.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  elevCabin: "https://images.pexels.com/photos/8243095/pexels-photo-8243095.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  elevButtons: "https://images.pexels.com/photos/7706391/pexels-photo-7706391.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  escalator: "https://images.pexels.com/photos/3605255/pexels-photo-3605255.jpeg?auto=compress&cs=tinysrgb&w=1600",
 };
 
 function useAutoAdvance(api: any, delay = 4000) {
