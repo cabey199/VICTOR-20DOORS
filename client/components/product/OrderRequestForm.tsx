@@ -40,38 +40,34 @@ export function OrderRequestForm({ product }: { product: Product }) {
     e.preventDefault();
     setLoading(true);
     try {
-      const body: OrderRequestBody = {
+      const payload = {
+        form: "order-request",
         productId: product.id,
         productTitle: product.title,
         productType: product.type,
-        options: {
-          size: size || undefined,
-          capacityKg: isElevator ? capacityKg : undefined,
-          floors: isElevator ? floors : undefined,
-          speedMs: isElevator ? speedMs : undefined,
-          quantity,
-        },
-        customer: {
-          name,
-          phone,
-          email: email || undefined,
-          preferredContact: preferred,
-          city: city || undefined,
-          address: address || undefined,
-        },
-        notes: notes || undefined,
+        options_size: size || "",
+        options_capacityKg: isElevator && capacityKg ? String(capacityKg) : "",
+        options_floors: isElevator && floors ? String(floors) : "",
+        options_speedMs: isElevator && speedMs ? String(speedMs) : "",
+        options_quantity: String(quantity),
+        customer_name: name,
+        customer_phone: phone,
+        customer_email: email,
+        customer_preferredContact: preferred ?? "",
+        customer_city: city,
+        customer_address: address,
+        notes,
       };
 
-      const res = await fetch("/api/order-request", {
+      const res = await fetch("https://formspree.io/f/mgvlrrrl", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(body),
+        headers: { Accept: "application/json", "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
       });
       if (!res.ok) throw new Error("Failed to submit");
-      const data: OrderRequestResponse = await res.json();
       toast({
         title: "Request sent",
-        description: `Reference: ${data.reference}`,
+        description: `We will contact you shortly`,
       });
     } catch (err: any) {
       toast({
