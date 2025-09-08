@@ -35,7 +35,10 @@ export default function Contact() {
     }
     const res = await fetch("https://formspree.io/f/mgvlrrrl", {
       method: "POST",
-      headers: { "Accept": "application/json", "Content-Type": "application/json" },
+      headers: {
+        Accept: "application/json",
+        "Content-Type": "application/json",
+      },
       body: JSON.stringify({
         form: "contact",
         name,
@@ -67,18 +70,34 @@ export default function Contact() {
                   </div>
                   {step === 0 ? (
                     <div className="grid gap-3 md:grid-cols-2">
-                      <Input name="name" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)} required aria-label="Name" />
+                      <Input
+                        name="name"
+                        placeholder="Name"
+                        value={name}
+                        onChange={(e) => setName(e.target.value)}
+                        required
+                        aria-label="Name"
+                      />
                       <Input
                         name="email"
                         type="email"
                         placeholder="Email"
                         value={email}
-                        onChange={(e)=>setEmail(e.target.value)}
+                        onChange={(e) => setEmail(e.target.value)}
                         required
                         aria-label="Email"
                       />
-                      <Input name="phone" placeholder="Phone" value={phone} onChange={(e)=>setPhone(e.target.value)} aria-label="Phone" />
-                      <Select defaultValue={productType} onValueChange={(v)=>setProductType(v)}>
+                      <Input
+                        name="phone"
+                        placeholder="Phone"
+                        value={phone}
+                        onChange={(e) => setPhone(e.target.value)}
+                        aria-label="Phone"
+                      />
+                      <Select
+                        defaultValue={productType}
+                        onValueChange={(v) => setProductType(v)}
+                      >
                         <SelectTrigger aria-label="Product type">
                           <SelectValue placeholder="Product type" />
                         </SelectTrigger>
@@ -87,7 +106,11 @@ export default function Contact() {
                           <SelectItem value="elevators">Elevators</SelectItem>
                         </SelectContent>
                       </Select>
-                      <input type="hidden" name="productType" value={productType} />
+                      <input
+                        type="hidden"
+                        name="productType"
+                        value={productType}
+                      />
                     </div>
                   ) : (
                     <div className="space-y-3">
@@ -95,7 +118,7 @@ export default function Contact() {
                         name="message"
                         placeholder="Your message"
                         value={message}
-                        onChange={(e)=>setMessage(e.target.value)}
+                        onChange={(e) => setMessage(e.target.value)}
                         required
                         aria-label="Message"
                       />
