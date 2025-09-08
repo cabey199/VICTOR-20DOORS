@@ -259,12 +259,12 @@ export default function Index() {
                     <DialogTrigger asChild>
                       <Button size="sm">Request Quote</Button>
                     </DialogTrigger>
-                    <DialogContent>
+                    <DialogContent className="p-4 sm:p-6 max-w-md md:max-w-lg max-h-[80vh] overflow-y-auto">
                       <DialogHeader>
                         <DialogTitle>Request a Quote</DialogTitle>
                       </DialogHeader>
                       <form
-                        className="space-y-3"
+                        className="space-y-2"
                         onSubmit={async (e) => {
                           e.preventDefault();
                           const formEl = e.currentTarget as HTMLFormElement;
@@ -325,6 +325,7 @@ export default function Index() {
                           name="name"
                           placeholder="Name"
                           required
+                          className="h-9"
                           aria-label="Name"
                         />
                         <Input
@@ -332,16 +333,19 @@ export default function Index() {
                           type="email"
                           placeholder="Email"
                           required
+                          className="h-9"
                           aria-label="Email"
                         />
                         <Input
                           name="phone"
                           placeholder="Phone"
+                          className="h-9"
                           aria-label="Phone"
                         />
                         <Textarea
                           name="details"
                           placeholder={`Details about: ${p.title}`}
+                          className="h-24"
                           aria-label="Details"
                         />
                         <Button type="submit">Send Request</Button>
