@@ -179,33 +179,29 @@ export default function Index() {
         <div className="flex items-center gap-3 rounded-lg border bg-card p-4 shadow-sm">
           <ShieldCheck className="text-brand-metal" />
           <div>
-            <p className="font-semibold">KRC Authorized</p>
-            <p className="text-xs text-muted-foreground">Official partner</p>
+            <p className="font-semibold">Official KRC Turkey Partner</p>
+            <p className="text-xs text-muted-foreground">Mona-Go Elevator</p>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-lg border bg-card p-4 shadow-sm">
           <BadgeCheck className="text-brand-metal" />
           <div>
-            <p className="font-semibold">1-Year Warranty</p>
-            <p className="text-xs text-muted-foreground">
-              On selected products
-            </p>
+            <p className="font-semibold">ISO & European Standard</p>
+            <p className="text-xs text-muted-foreground">45+ years experience</p>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-lg border bg-card p-4 shadow-sm">
           <Truck className="text-brand-metal" />
           <div>
-            <p className="font-semibold">Fast Delivery</p>
-            <p className="text-xs text-muted-foreground">25–30 days</p>
+            <p className="font-semibold">Supply & Install in 2 Months</p>
+            <p className="text-xs text-muted-foreground">Free ERD & UPS safety</p>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-lg border bg-card p-4 shadow-sm">
           <DoorOpen className="text-brand-metal" />
           <div>
-            <p className="font-semibold">
-              <Counter to={500} />+ Doors Installed
-            </p>
-            <p className="text-xs text-muted-foreground">Across Ethiopia</p>
+            <p className="font-semibold">Free Maintenance 1 Year</p>
+            <p className="text-xs text-muted-foreground">2-year full warranty</p>
           </div>
         </div>
       </section>
