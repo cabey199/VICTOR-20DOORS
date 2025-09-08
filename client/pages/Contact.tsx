@@ -65,16 +65,16 @@ export default function Contact() {
   }
 
   return (
-    <section className="container mx-auto py-16">
+    <section className="container mx-auto py-10">
       <div className="grid gap-8 lg:grid-cols-3">
         <div className="lg:col-span-2 space-y-6">
-          <Card>
+          <Card className="max-w-2xl">
             <CardHeader>
               <CardTitle>Contact Us</CardTitle>
             </CardHeader>
             <CardContent>
               {!submitted ? (
-                <form className="space-y-4" onSubmit={handleSubmit}>
+                <form className="space-y-3" onSubmit={handleSubmit}>
                   <div className="h-2 w-full overflow-hidden rounded bg-muted">
                     <div
                       className="h-full bg-brand-primary transition-all"
@@ -82,13 +82,14 @@ export default function Contact() {
                     />
                   </div>
                   {step === 0 ? (
-                    <div className="grid gap-3 md:grid-cols-2">
+                    <div className="grid gap-2 md:grid-cols-2">
                       <Input
                         name="name"
                         placeholder="Name"
                         value={name}
                         onChange={(e) => setName(e.target.value)}
                         required
+                        className="h-9"
                         aria-label="Name"
                       />
                       <Input
@@ -98,6 +99,7 @@ export default function Contact() {
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         required
+                        className="h-9"
                         aria-label="Email"
                       />
                       <Input
@@ -105,6 +107,7 @@ export default function Contact() {
                         placeholder="Phone"
                         value={phone}
                         onChange={(e) => setPhone(e.target.value)}
+                        className="h-9"
                         aria-label="Phone"
                       />
                       <Select
@@ -126,30 +129,32 @@ export default function Contact() {
                       />
                     </div>
                   ) : (
-                    <div className="space-y-3">
+                    <div className="space-y-2">
                       <Textarea
                         name="message"
                         placeholder="Your message"
                         value={message}
                         onChange={(e) => setMessage(e.target.value)}
                         required
+                        className="h-24"
                         aria-label="Message"
                       />
                       <div className="flex justify-between">
                         <Button
                           type="button"
+                          size="sm"
                           variant="outline"
                           onClick={() => setStep(0)}
                         >
                           Back
                         </Button>
-                        <Button type="submit">Submit</Button>
+                        <Button type="submit" size="sm">Submit</Button>
                       </div>
                     </div>
                   )}
                   {step === 0 && (
                     <div className="flex justify-end">
-                      <Button type="submit">Continue</Button>
+                      <Button type="submit" size="sm">Continue</Button>
                     </div>
                   )}
                 </form>
