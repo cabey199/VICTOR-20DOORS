@@ -17,19 +17,23 @@ export type Product = {
 };
 
 const IMG = {
-  door1:
-    "https://images.pexels.com/photos/2564866/pexels-photo-2564866.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  door2:
-    "https://images.pexels.com/photos/5845681/pexels-photo-5845681.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  door3:
-    "https://images.pexels.com/photos/965878/pexels-photo-965878.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  lock: "https://images.pexels.com/photos/792031/pexels-photo-792031.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  elevCabin:
-    "https://images.pexels.com/photos/8243095/pexels-photo-8243095.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  elevButtons:
-    "https://images.pexels.com/photos/7706391/pexels-photo-7706391.jpeg?auto=compress&cs=tinysrgb&w=1200",
-  escalator:
-    "https://images.pexels.com/photos/3605255/pexels-photo-3605255.jpeg?auto=compress&cs=tinysrgb&w=1200",
+  // Doors
+  doorA: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F0bed01f0d3a14829bcb24d39d0ad26cd?format=webp&width=1200",
+  doorB: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F921bb1b7096044f0bea754b873cbe30f?format=webp&width=1200",
+  doorC: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F6acd3fd746bd422fadd0a01ed582d976?format=webp&width=1200",
+  doorD: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F9dfdc41fa8ab4696a88d7a10ceb3cc06?format=webp&width=1200",
+  doorE: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Fd391aa14b94342cf8ec49a21271e5745?format=webp&width=1200",
+  doorF: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Fb6ebe3a7dddb4cb09a45851b1260f913?format=webp&width=1200",
+  doorG: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F389405e1644548cdae8f0e5e2075fb73?format=webp&width=1200",
+  doorH: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F7ec4ad8856a544b2b6d3846456c5d9b6?format=webp&width=1200",
+  doorI: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F676ab9a4abf44c7786f389a4cad9e9f9?format=webp&width=1200",
+  doorCatalog: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F99b0ba51465b4a758432afbef766b3f1?format=webp&width=1200",
+  lockDetail: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F3b92a1bab9e5457e8515b4cf18e438a7?format=webp&width=1200",
+  // Elevators
+  elevPanelA: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F0f164c1559a44b8bbf2f287ba47fe8dc?format=webp&width=1200",
+  elevCabinA: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F54a575ace73a4c3eac275ccb53c35e7d?format=webp&width=1200",
+  elevCabinB: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Ff1d28ef89fd140b691bea379e704e1f6?format=webp&width=1200",
+  elevPanelB: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Ffaa20e19979f49b08c4511ba08513cfc?format=webp&width=1200",
 };
 
 export const demoProducts: Product[] = [
@@ -37,7 +41,7 @@ export const demoProducts: Product[] = [
     id: "door-1",
     type: "door",
     title: "Luxury Steel Door – Oak Finish (2x1m)",
-    images: [IMG.door1],
+    images: [IMG.doorA, IMG.lockDetail],
     specs: [
       "Modern metal door with wood-like nature",
       "Rubber sill for soundproofing & pest barrier",
@@ -56,7 +60,7 @@ export const demoProducts: Product[] = [
     id: "door-2",
     type: "door",
     title: "Security Iron Door – Walnut (1.9x0.9m)",
-    images: [IMG.door2],
+    images: [IMG.doorB, IMG.lockDetail],
     specs: [
       "Modern metal door with wood-like nature",
       "Rubber sill for soundproofing & pest barrier",
@@ -78,7 +82,7 @@ export const demoProducts: Product[] = [
     id: "door-3",
     type: "door",
     title: "Classic Steel Door – Teak Finish (2.1x1m)",
-    images: [IMG.door3],
+    images: [IMG.doorD, IMG.doorC],
     specs: [
       "Modern metal door with wood-like nature",
       "Rubber sill for soundproofing & pest barrier",
@@ -97,7 +101,7 @@ export const demoProducts: Product[] = [
     id: "door-4",
     type: "door",
     title: "Premium Entrance Door – Double Leaf",
-    images: [IMG.door1],
+    images: [IMG.doorA, IMG.lockDetail],
     specs: [
       "Modern metal door with wood-like nature",
       "Rubber sill for soundproofing & pest barrier",
@@ -116,7 +120,7 @@ export const demoProducts: Product[] = [
     id: "door-5",
     type: "door",
     title: "Modern Handle Set – Stainless",
-    images: [IMG.lock],
+    images: [IMG.doorCatalog, IMG.lockDetail],
     specs: ["Stainless steel", "Scratch resistant"],
     priceETBPerM2: 17700,
     features: [
@@ -130,7 +134,7 @@ export const demoProducts: Product[] = [
     id: "elev-1",
     type: "elevator",
     title: "Mona-Go KRC Passenger Elevator – 800 kg",
-    images: [IMG.elevCabin],
+    images: [IMG.elevCabinA, IMG.elevPanelA],
     specs: [
       "ISO Certified • European Standard",
       "45+ years in European market",
@@ -151,7 +155,7 @@ export const demoProducts: Product[] = [
     id: "elev-2",
     type: "elevator",
     title: "KRC Commercial Elevator – 1000 kg",
-    images: [IMG.escalator],
+    images: [IMG.elevCabinB, IMG.elevPanelB],
     specs: [
       "ISO Certified • European Standard",
       "Free 12 cabin designs & decoration",
@@ -171,7 +175,7 @@ export const demoProducts: Product[] = [
     id: "elev-3",
     type: "elevator",
     title: "KRC Elevator – Control Panel ARD",
-    images: [IMG.elevButtons],
+    images: [IMG.elevPanelA, IMG.elevCabinA],
     specs: [
       "ISO Certified • European Standard",
       "Emergency power (ARD)",
@@ -188,7 +192,7 @@ export const demoProducts: Product[] = [
     id: "elev-4",
     type: "elevator",
     title: "Escalator System – Heavy Duty",
-    images: [IMG.escalator],
+    images: [IMG.elevCabinB, IMG.elevPanelB],
     specs: ["ISO Certified • European Standard", "Energy saving"],
     features: [
       "Official KRC Turkey partner",
