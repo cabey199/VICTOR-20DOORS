@@ -54,16 +54,16 @@ export function ProductCard({ product }: { product: Product }) {
             <DialogTrigger asChild>
               <Button size="sm">View & Order</Button>
             </DialogTrigger>
-            <DialogContent title={`${product.title} — Details & Order`}>
+            <DialogContent className="p-4 sm:p-6 max-w-md md:max-w-xl" title={`${product.title} — Details & Order`}>
               <DialogHeader>
                 <DialogTitle>{product.title} — Details & Order</DialogTitle>
               </DialogHeader>
-              <div className="grid gap-6">
-                <div className="grid gap-4 md:grid-cols-2">
+              <div className="grid gap-4">
+                <div className="grid gap-3 md:grid-cols-2">
                   <img
                     src={product.images[0]}
                     alt={product.title}
-                    className="w-full rounded-md object-cover"
+                    className="hidden md:block w-full rounded-md object-cover"
                   />
                   <div className="space-y-3 text-sm">
                     <div>
