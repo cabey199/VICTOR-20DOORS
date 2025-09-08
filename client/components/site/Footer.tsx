@@ -44,17 +44,11 @@ export default function Footer() {
           <div className="flex flex-col gap-2">
             <a
               className="inline-flex items-center justify-center rounded-md border px-3 py-2 hover:bg-accent"
-              href="tel:+251941183695"
+              href="tel:+251977588207"
             >
-              Call +251 94 118 3695
+              Call +251 977 588 207
             </a>
-            <a
-              className="inline-flex items-center justify-center rounded-md border px-3 py-2 hover:bg-accent"
-              href="tel:+251991227010"
-            >
-              Call +251 99 122 7010
-            </a>
-            <a
+                        <a
               className="inline-flex items-center justify-center gap-2 rounded-md border px-3 py-2 hover:bg-accent"
               href="https://t.me/victordoorplc"
               target="_blank"
