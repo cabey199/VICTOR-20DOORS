@@ -148,13 +148,17 @@ export default function Contact() {
                         >
                           Back
                         </Button>
-                        <Button type="submit" size="sm">Submit</Button>
+                        <Button type="submit" size="sm">
+                          Submit
+                        </Button>
                       </div>
                     </div>
                   )}
                   {step === 0 && (
                     <div className="flex justify-end">
-                      <Button type="submit" size="sm">Continue</Button>
+                      <Button type="submit" size="sm">
+                        Continue
+                      </Button>
                     </div>
                   )}
                 </form>
