@@ -11,7 +11,6 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import type { Product } from "@/data/products";
-import type { OrderRequestBody, OrderRequestResponse } from "@shared/api";
 import { toast } from "@/components/ui/use-toast";
 
 export function OrderRequestForm({ product }: { product: Product }) {
