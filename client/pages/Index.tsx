@@ -99,7 +99,7 @@ const testimonials = [
   {
     name: "Mekdes T.",
     body: "Installed a beautiful oak-finish security door—looks like wood, feels like a vault.",
-    image: IMG.door3,
+    image: IMG.doorB,
   },
   {
     name: "Abel G.",
