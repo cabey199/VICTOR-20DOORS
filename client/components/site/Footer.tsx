@@ -48,7 +48,7 @@ export default function Footer() {
             >
               Call +251 977 588 207
             </a>
-                        <a
+            <a
               className="inline-flex items-center justify-center gap-2 rounded-md border px-3 py-2 hover:bg-accent"
               href="https://t.me/victordoorplc"
               target="_blank"
