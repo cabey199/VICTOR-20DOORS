@@ -55,8 +55,8 @@ export default function Header() {
                 </nav>
                 <div className="mt-6">
                   <a
-                    href="tel:+251941183695"
-                    aria-label="Call now +251 94 118 3695"
+                    href="tel:+251977588207"
+                    aria-label="Call now +251 977 588 207"
                   >
                     <Button className="w-full bg-brand-primary hover:bg-brand-primary/90">
                       <Phone className="h-4 w-4" aria-hidden />
@@ -101,7 +101,7 @@ export default function Header() {
         </nav>
         <div className="flex items-center gap-2">
           <ThemeToggle />
-          <a href="tel:+251941183695" aria-label="Call now +251 94 118 3695">
+          <a href="tel:+251977588207" aria-label="Call now +251 977 588 207">
             <Button className="hidden sm:inline-flex bg-brand-primary hover:bg-brand-primary/90">
               <Phone className="h-4 w-4" aria-hidden />
               <span className="ml-2">Call Now</span>
