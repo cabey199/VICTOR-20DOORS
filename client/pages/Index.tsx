@@ -109,7 +109,7 @@ const testimonials = [
   {
     name: "Selam A.",
     body: "Great service! The KRC elevator with ARD gives us peace of mind.",
-    image: IMG.elevButtons,
+    image: IMG.elevCabinB,
   },
 ];
 
