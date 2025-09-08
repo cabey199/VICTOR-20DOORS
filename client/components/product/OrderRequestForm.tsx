@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/select";
 import type { Product } from "@/data/products";
 import type { OrderRequestBody, OrderRequestResponse } from "@shared/api";
-import { toast } from "@/components/ui/sonner";
+import { toast } from "@/components/ui/use-toast";
 
 export function OrderRequestForm({ product }: { product: Product }) {
   const [color, setColor] = useState<string>("");
