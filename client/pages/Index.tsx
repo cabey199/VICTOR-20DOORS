@@ -264,18 +264,33 @@ export default function Index() {
                       </DialogHeader>
                       <form
                         className="space-y-3"
-                        onSubmit={(e) => e.preventDefault()}
+                        onSubmit={async (e) => {
+                          e.preventDefault();
+                          const fd = new FormData(e.currentTarget as HTMLFormElement);
+                          const body = Object.fromEntries(fd.entries());
+                          await fetch("https://formspree.io/f/mgvlrrrl", {
+                            method: "POST",
+                            headers: { Accept: "application/json", "Content-Type": "application/json" },
+                            body: JSON.stringify(body),
+                          });
+                          (e.currentTarget as HTMLFormElement).reset();
+                        }}
                         aria-label="Request quote form"
                       >
-                        <Input placeholder="Name" required aria-label="Name" />
+                        <input type="hidden" name="form" value="request-quote" />
+                        <input type="hidden" name="productTitle" value={p.title} />
+                        <input type="hidden" name="productType" value={p.type} />
+                        <Input name="name" placeholder="Name" required aria-label="Name" />
                         <Input
+                          name="email"
                           type="email"
                           placeholder="Email"
                           required
                           aria-label="Email"
                         />
-                        <Input placeholder="Phone" aria-label="Phone" />
+                        <Input name="phone" placeholder="Phone" aria-label="Phone" />
                         <Textarea
+                          name="details"
                           placeholder={`Details about: ${p.title}`}
                           aria-label="Details"
                         />
