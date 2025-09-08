@@ -21,6 +21,32 @@ import { CheckCircle2 } from "lucide-react";
 export default function Contact() {
   const [step, setStep] = useState(0);
   const [submitted, setSubmitted] = useState(false);
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [phone, setPhone] = useState("");
+  const [productType, setProductType] = useState("doors");
+  const [message, setMessage] = useState("");
+
+  async function handleSubmit(e: React.FormEvent<HTMLFormElement>) {
+    e.preventDefault();
+    if (step === 0) {
+      setStep(1);
+      return;
+    }
+    const res = await fetch("https://formspree.io/f/mgvlrrrl", {
+      method: "POST",
+      headers: { "Accept": "application/json", "Content-Type": "application/json" },
+      body: JSON.stringify({
+        form: "contact",
+        name,
+        email,
+        phone,
+        productType,
+        message,
+      }),
+    });
+    if (res.ok) setSubmitted(true);
+  }
 
   return (
     <section className="container mx-auto py-16">
@@ -32,14 +58,7 @@ export default function Contact() {
             </CardHeader>
             <CardContent>
               {!submitted ? (
-                <form
-                  className="space-y-4"
-                  onSubmit={(e) => {
-                    e.preventDefault();
-                    if (step === 0) setStep(1);
-                    else setSubmitted(true);
-                  }}
-                >
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div className="h-2 w-full overflow-hidden rounded bg-muted">
                     <div
                       className="h-full bg-brand-primary transition-all"
@@ -48,15 +67,18 @@ export default function Contact() {
                   </div>
                   {step === 0 ? (
                     <div className="grid gap-3 md:grid-cols-2">
-                      <Input placeholder="Name" required aria-label="Name" />
+                      <Input name="name" placeholder="Name" value={name} onChange={(e)=>setName(e.target.value)} required aria-label="Name" />
                       <Input
+                        name="email"
                         type="email"
                         placeholder="Email"
+                        value={email}
+                        onChange={(e)=>setEmail(e.target.value)}
                         required
                         aria-label="Email"
                       />
-                      <Input placeholder="Phone" aria-label="Phone" />
-                      <Select defaultValue="doors">
+                      <Input name="phone" placeholder="Phone" value={phone} onChange={(e)=>setPhone(e.target.value)} aria-label="Phone" />
+                      <Select defaultValue={productType} onValueChange={(v)=>setProductType(v)}>
                         <SelectTrigger aria-label="Product type">
                           <SelectValue placeholder="Product type" />
                         </SelectTrigger>
@@ -65,11 +87,15 @@ export default function Contact() {
                           <SelectItem value="elevators">Elevators</SelectItem>
                         </SelectContent>
                       </Select>
+                      <input type="hidden" name="productType" value={productType} />
                     </div>
                   ) : (
                     <div className="space-y-3">
                       <Textarea
+                        name="message"
                         placeholder="Your message"
+                        value={message}
+                        onChange={(e)=>setMessage(e.target.value)}
                         required
                         aria-label="Message"
                       />
