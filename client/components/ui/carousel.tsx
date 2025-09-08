@@ -66,13 +66,17 @@ const Carousel = React.forwardRef<
     const [canScrollPrev, setCanScrollPrev] = React.useState(false);
     const [canScrollNext, setCanScrollNext] = React.useState(false);
 
-    const onSelect = React.useCallback((api: CarouselApi) => {
-      if (!api) {
-        return;
-      }
+    const rafRef = React.useRef<number | null>(null);
 
-      setCanScrollPrev(api.canScrollPrev());
-      setCanScrollNext(api.canScrollNext());
+    const onSelect = React.useCallback((api: CarouselApi) => {
+      if (!api) return;
+
+      // schedule DOM-read-derived state updates outside of ResizeObserver loop
+      if (rafRef.current) cancelAnimationFrame(rafRef.current);
+      rafRef.current = requestAnimationFrame(() => {
+        setCanScrollPrev(api.canScrollPrev());
+        setCanScrollNext(api.canScrollNext());
+      });
     }, []);
 
     const scrollPrev = React.useCallback(() => {
