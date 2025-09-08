@@ -287,29 +287,12 @@ export default function Index() {
                 <CarouselItem key={i} className="md:basis-1/2 lg:basis-1/3">
                   <Card className="h-full">
                     <CardContent className="p-6">
-                      <div className="flex items-center gap-3">
-                        <img
-                          src={t.image}
-                          alt={t.name}
-                          className="h-10 w-10 rounded object-cover"
-                          loading="lazy"
-                          decoding="async"
-                          width="40"
-                          height="40"
-                        />
-                        <div>
-                          <p className="font-medium">{t.name}</p>
-                          <div
-                            className="flex text-amber-500"
-                            aria-label="5 star rating"
-                          >
-                            {Array.from({ length: 5 }).map((_, idx) => (
-                              <Star
-                                key={idx}
-                                className="h-4 w-4 fill-amber-400"
-                              />
-                            ))}
-                          </div>
+                      <div>
+                        <p className="font-medium">{t.name}</p>
+                        <div className="flex text-amber-500" aria-label="5 star rating">
+                          {Array.from({ length: 5 }).map((_, idx) => (
+                            <Star key={idx} className="h-4 w-4 fill-amber-400" />
+                          ))}
                         </div>
                       </div>
                       <p className="mt-4 text-sm text-muted-foreground">
