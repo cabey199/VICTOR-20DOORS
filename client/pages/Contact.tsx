@@ -244,12 +244,8 @@ export default function Contact() {
                 </p>
                 <p>
                   <strong>Phone:</strong>{" "}
-                  <a className="text-primary" href="tel:+251941183695">
-                    +251 94 118 3695
-                  </a>
-                  ,{" "}
-                  <a className="text-primary" href="tel:+251991227010">
-                    +251 99 122 7010
+                  <a className="text-primary" href="tel:+251977588207">
+                    +251 977 588 207
                   </a>
                 </p>
                 <p>
