@@ -25,9 +25,13 @@ export default function Header() {
               </SheetTrigger>
               <SheetContent side="left" className="px-4 py-6">
                 <div className="mb-4 flex items-center gap-2">
-                  <div className="h-9 w-9 rounded-md bg-brand-wood/20 ring-1 ring-brand-wood/30 grid place-items-center">
-                    <DoorOpen className="h-5 w-5 text-brand-wood" aria-hidden />
-                  </div>
+                  <img
+                    src="https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Fdf279bbb46764701826c66a3a373d845?format=webp&width=160"
+                    alt="Mona Go Elevator — Victory in Motion logo"
+                    className="h-9 w-auto"
+                    loading="eager"
+                    decoding="async"
+                  />
                   <div className="leading-tight">
                     <p className="font-bold">Victor Doors</p>
                     <p className="text-xs text-muted-foreground">
@@ -68,9 +72,13 @@ export default function Header() {
             className="flex items-center gap-2"
             aria-label="Victor Doors and Mona-Go Elevators home"
           >
-            <div className="h-9 w-9 rounded-md bg-brand-wood/20 ring-1 ring-brand-wood/30 grid place-items-center">
-              <DoorOpen className="h-5 w-5 text-brand-wood" aria-hidden />
-            </div>
+            <img
+              src="https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Fdf279bbb46764701826c66a3a373d845?format=webp&width=160"
+              alt="Mona Go Elevator — Victory in Motion logo"
+              className="h-9 w-auto"
+              loading="eager"
+              decoding="async"
+            />
             <div className="leading-tight">
               <p className="font-bold text-lg">Victor Doors</p>
               <p className="text-xs text-muted-foreground">
