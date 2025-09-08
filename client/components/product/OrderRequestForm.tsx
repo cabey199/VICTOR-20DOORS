@@ -85,15 +85,16 @@ export function OrderRequestForm({ product }: { product: Product }) {
   return (
     <form
       onSubmit={submit}
-      className="space-y-3"
+      className="space-y-2"
       aria-label="Order request form"
     >
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="grid gap-2 md:grid-cols-2">
         {!isElevator && (
           <div className="md:col-span-2">
             <Label htmlFor="size">Size (e.g., 2.0 x 1.0 m)</Label>
             <Input
               id="size"
+              className="h-9"
               placeholder="Enter custom size"
               value={size}
               onChange={(e) => setSize(e.target.value)}
@@ -107,6 +108,7 @@ export function OrderRequestForm({ product }: { product: Product }) {
               <Input
                 id="capacity"
                 type="number"
+                className="h-9"
                 value={capacityKg ?? ""}
                 onChange={(e) =>
                   setCapacityKg(Number(e.target.value) || undefined)
@@ -118,6 +120,7 @@ export function OrderRequestForm({ product }: { product: Product }) {
               <Input
                 id="floors"
                 type="number"
+                className="h-9"
                 value={floors ?? ""}
                 onChange={(e) => setFloors(Number(e.target.value) || undefined)}
               />
@@ -128,6 +131,7 @@ export function OrderRequestForm({ product }: { product: Product }) {
                 id="speed"
                 type="number"
                 step="0.1"
+                className="h-9"
                 value={speedMs ?? ""}
                 onChange={(e) =>
                   setSpeedMs(Number(e.target.value) || undefined)
@@ -142,6 +146,7 @@ export function OrderRequestForm({ product }: { product: Product }) {
             id="quantity"
             type="number"
             min={1}
+            className="h-9"
             value={quantity}
             onChange={(e) =>
               setQuantity(Math.max(1, Number(e.target.value) || 1))
@@ -150,12 +155,13 @@ export function OrderRequestForm({ product }: { product: Product }) {
         </div>
       </div>
 
-      <div className="grid gap-3 md:grid-cols-2">
+      <div className="grid gap-2 md:grid-cols-2">
         <div>
           <Label htmlFor="name">Full Name</Label>
           <Input
             id="name"
             required
+            className="h-9"
             value={name}
             onChange={(e) => setName(e.target.value)}
           />
@@ -165,6 +171,7 @@ export function OrderRequestForm({ product }: { product: Product }) {
           <Input
             id="phone"
             required
+            className="h-9"
             value={phone}
             onChange={(e) => setPhone(e.target.value)}
           />
@@ -174,6 +181,7 @@ export function OrderRequestForm({ product }: { product: Product }) {
           <Input
             id="email"
             type="email"
+            className="h-9"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
           />
@@ -198,6 +206,7 @@ export function OrderRequestForm({ product }: { product: Product }) {
           <Label htmlFor="city">City</Label>
           <Input
             id="city"
+            className="h-9"
             value={city}
             onChange={(e) => setCity(e.target.value)}
           />
@@ -206,6 +215,7 @@ export function OrderRequestForm({ product }: { product: Product }) {
           <Label htmlFor="address">Address</Label>
           <Input
             id="address"
+            className="h-9"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
           />
@@ -215,6 +225,7 @@ export function OrderRequestForm({ product }: { product: Product }) {
           <Textarea
             id="notes"
             placeholder="Any special request"
+            className="min-h-24"
             value={notes}
             onChange={(e) => setNotes(e.target.value)}
           />
