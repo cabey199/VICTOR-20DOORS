@@ -18,22 +18,37 @@ export type Product = {
 
 const IMG = {
   // Doors
-  doorA: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F0bed01f0d3a14829bcb24d39d0ad26cd?format=webp&width=1200",
-  doorB: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F921bb1b7096044f0bea754b873cbe30f?format=webp&width=1200",
-  doorC: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F6acd3fd746bd422fadd0a01ed582d976?format=webp&width=1200",
-  doorD: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F9dfdc41fa8ab4696a88d7a10ceb3cc06?format=webp&width=1200",
-  doorE: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Fd391aa14b94342cf8ec49a21271e5745?format=webp&width=1200",
-  doorF: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Fb6ebe3a7dddb4cb09a45851b1260f913?format=webp&width=1200",
-  doorG: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F389405e1644548cdae8f0e5e2075fb73?format=webp&width=1200",
-  doorH: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F7ec4ad8856a544b2b6d3846456c5d9b6?format=webp&width=1200",
-  doorI: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F676ab9a4abf44c7786f389a4cad9e9f9?format=webp&width=1200",
-  doorCatalog: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F99b0ba51465b4a758432afbef766b3f1?format=webp&width=1200",
-  lockDetail: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F3b92a1bab9e5457e8515b4cf18e438a7?format=webp&width=1200",
+  doorA:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F0bed01f0d3a14829bcb24d39d0ad26cd?format=webp&width=1200",
+  doorB:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F921bb1b7096044f0bea754b873cbe30f?format=webp&width=1200",
+  doorC:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F6acd3fd746bd422fadd0a01ed582d976?format=webp&width=1200",
+  doorD:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F9dfdc41fa8ab4696a88d7a10ceb3cc06?format=webp&width=1200",
+  doorE:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Fd391aa14b94342cf8ec49a21271e5745?format=webp&width=1200",
+  doorF:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Fb6ebe3a7dddb4cb09a45851b1260f913?format=webp&width=1200",
+  doorG:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F389405e1644548cdae8f0e5e2075fb73?format=webp&width=1200",
+  doorH:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F7ec4ad8856a544b2b6d3846456c5d9b6?format=webp&width=1200",
+  doorI:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F676ab9a4abf44c7786f389a4cad9e9f9?format=webp&width=1200",
+  doorCatalog:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F99b0ba51465b4a758432afbef766b3f1?format=webp&width=1200",
+  lockDetail:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F3b92a1bab9e5457e8515b4cf18e438a7?format=webp&width=1200",
   // Elevators
-  elevPanelA: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F0f164c1559a44b8bbf2f287ba47fe8dc?format=webp&width=1200",
-  elevCabinA: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F54a575ace73a4c3eac275ccb53c35e7d?format=webp&width=1200",
-  elevCabinB: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Ff1d28ef89fd140b691bea379e704e1f6?format=webp&width=1200",
-  elevPanelB: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Ffaa20e19979f49b08c4511ba08513cfc?format=webp&width=1200",
+  elevPanelA:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F0f164c1559a44b8bbf2f287ba47fe8dc?format=webp&width=1200",
+  elevCabinA:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F54a575ace73a4c3eac275ccb53c35e7d?format=webp&width=1200",
+  elevCabinB:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Ff1d28ef89fd140b691bea379e704e1f6?format=webp&width=1200",
+  elevPanelB:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Ffaa20e19979f49b08c4511ba08513cfc?format=webp&width=1200",
 };
 
 export const demoProducts: Product[] = [
@@ -176,10 +191,7 @@ export const demoProducts: Product[] = [
     type: "elevator",
     title: "KRC Elevator – Control Panel ARD",
     images: [IMG.elevPanelA, IMG.elevCabinA],
-    specs: [
-      "ISO Certified • European Standard",
-      "Emergency power (ARD)",
-    ],
+    specs: ["ISO Certified • European Standard", "Emergency power (ARD)"],
     features: [
       "Official KRC Turkey partner",
       "Braille buttons",

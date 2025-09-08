@@ -69,9 +69,16 @@ export function OrderRequestForm({ product }: { product: Product }) {
       });
       if (!res.ok) throw new Error("Failed to submit");
       const data: OrderRequestResponse = await res.json();
-      toast({ title: "Request sent", description: `Reference: ${data.reference}` });
+      toast({
+        title: "Request sent",
+        description: `Reference: ${data.reference}`,
+      });
     } catch (err: any) {
-      toast({ title: "Could not send request", description: err?.message ?? "Please try again", variant: "destructive" });
+      toast({
+        title: "Could not send request",
+        description: err?.message ?? "Please try again",
+        variant: "destructive",
+      });
     } finally {
       setLoading(false);
     }

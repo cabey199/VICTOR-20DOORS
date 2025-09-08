@@ -54,7 +54,10 @@ export function ProductCard({ product }: { product: Product }) {
             <DialogTrigger asChild>
               <Button size="sm">View & Order</Button>
             </DialogTrigger>
-            <DialogContent className="p-4 sm:p-6 max-w-md md:max-w-xl" title={`${product.title} — Details & Order`}>
+            <DialogContent
+              className="p-4 sm:p-6 max-w-md md:max-w-xl"
+              title={`${product.title} — Details & Order`}
+            >
               <DialogHeader>
                 <DialogTitle>{product.title} — Details & Order</DialogTitle>
               </DialogHeader>

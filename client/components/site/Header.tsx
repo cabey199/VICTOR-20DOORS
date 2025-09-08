@@ -34,7 +34,9 @@ export default function Header() {
                   />
                   <div className="leading-tight">
                     <p className="font-bold">Mona Go Elevator</p>
-                    <p className="text-xs text-muted-foreground">Victory in Motion</p>
+                    <p className="text-xs text-muted-foreground">
+                      Victory in Motion
+                    </p>
                   </div>
                 </div>
                 <nav

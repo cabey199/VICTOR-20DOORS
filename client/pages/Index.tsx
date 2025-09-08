@@ -21,14 +21,21 @@ import { Textarea } from "@/components/ui/textarea";
 
 const IMG = {
   // Doors
-  doorA: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F0bed01f0d3a14829bcb24d39d0ad26cd?format=webp&width=1600",
-  doorB: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F921bb1b7096044f0bea754b873cbe30f?format=webp&width=1600",
-  doorC: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F6acd3fd746bd422fadd0a01ed582d976?format=webp&width=1600",
-  doorD: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F9dfdc41fa8ab4696a88d7a10ceb3cc06?format=webp&width=1600",
+  doorA:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F0bed01f0d3a14829bcb24d39d0ad26cd?format=webp&width=1600",
+  doorB:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F921bb1b7096044f0bea754b873cbe30f?format=webp&width=1600",
+  doorC:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F6acd3fd746bd422fadd0a01ed582d976?format=webp&width=1600",
+  doorD:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F9dfdc41fa8ab4696a88d7a10ceb3cc06?format=webp&width=1600",
   // Elevators
-  elevCabinA: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F54a575ace73a4c3eac275ccb53c35e7d?format=webp&width=1600",
-  elevCabinB: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Ff1d28ef89fd140b691bea379e704e1f6?format=webp&width=1600",
-  elevPanelA: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F0f164c1559a44b8bbf2f287ba47fe8dc?format=webp&width=1600",
+  elevCabinA:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F54a575ace73a4c3eac275ccb53c35e7d?format=webp&width=1600",
+  elevCabinB:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Ff1d28ef89fd140b691bea379e704e1f6?format=webp&width=1600",
+  elevPanelA:
+    "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F0f164c1559a44b8bbf2f287ba47fe8dc?format=webp&width=1600",
 };
 
 function useAutoAdvance(api: any, delay = 4000) {
@@ -184,21 +191,27 @@ export default function Index() {
           <BadgeCheck className="text-brand-metal" />
           <div>
             <p className="font-semibold">ISO & European Standard</p>
-            <p className="text-xs text-muted-foreground">45+ years experience</p>
+            <p className="text-xs text-muted-foreground">
+              45+ years experience
+            </p>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-lg border bg-card p-4 shadow-sm">
           <Truck className="text-brand-metal" />
           <div>
             <p className="font-semibold">Supply & Install in 2 Months</p>
-            <p className="text-xs text-muted-foreground">Free ERD & UPS safety</p>
+            <p className="text-xs text-muted-foreground">
+              Free ERD & UPS safety
+            </p>
           </div>
         </div>
         <div className="flex items-center gap-3 rounded-lg border bg-card p-4 shadow-sm">
           <DoorOpen className="text-brand-metal" />
           <div>
             <p className="font-semibold">Free Maintenance 1 Year</p>
-            <p className="text-xs text-muted-foreground">2-year full warranty</p>
+            <p className="text-xs text-muted-foreground">
+              2-year full warranty
+            </p>
           </div>
         </div>
       </section>
@@ -289,9 +302,15 @@ export default function Index() {
                     <CardContent className="p-6">
                       <div>
                         <p className="font-medium">{t.name}</p>
-                        <div className="flex text-amber-500" aria-label="5 star rating">
+                        <div
+                          className="flex text-amber-500"
+                          aria-label="5 star rating"
+                        >
                           {Array.from({ length: 5 }).map((_, idx) => (
-                            <Star key={idx} className="h-4 w-4 fill-amber-400" />
+                            <Star
+                              key={idx}
+                              className="h-4 w-4 fill-amber-400"
+                            />
                           ))}
                         </div>
                       </div>
