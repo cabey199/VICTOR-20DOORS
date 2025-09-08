@@ -55,7 +55,7 @@ export function ProductCard({ product }: { product: Product }) {
               <Button size="sm">View & Order</Button>
             </DialogTrigger>
             <DialogContent
-              className="p-4 sm:p-6 max-w-md md:max-w-xl"
+              className="p-4 sm:p-6 max-w-md md:max-w-xl max-h-[80vh] overflow-y-auto"
               title={`${product.title} — Details & Order`}
             >
               <DialogHeader>
