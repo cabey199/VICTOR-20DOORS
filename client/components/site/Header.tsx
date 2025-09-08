@@ -26,12 +26,16 @@ export default function Header() {
               <SheetContent side="left" className="px-4 py-6">
                 <div className="mb-4 flex items-center gap-2">
                   <img
-                    src="https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Fdf279bbb46764701826c66a3a373d845?format=webp&width=256"
-                    alt="Mona Go Elevator — Victory in Motion logo"
+                    src="https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Fc03a182443c14fae878850f6be84c828?format=webp&width=256"
+                    alt="Mona Go Elevator logo"
                     className="h-8 md:h-9 w-auto object-contain"
                     loading="eager"
                     decoding="async"
                   />
+                  <div className="leading-tight">
+                    <p className="font-bold">Mona Go Elevator</p>
+                    <p className="text-xs text-muted-foreground">Victory in Motion</p>
+                  </div>
                 </div>
                 <nav
                   aria-label="Mobile navigation"
@@ -67,12 +71,16 @@ export default function Header() {
             aria-label="Mona Go Elevator — Victory in Motion home"
           >
             <img
-              src="https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Fdf279bbb46764701826c66a3a373d845?format=webp&width=256"
-              alt="Mona Go Elevator — Victory in Motion logo"
+              src="https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Fc03a182443c14fae878850f6be84c828?format=webp&width=256"
+              alt="Mona Go Elevator logo"
               className="h-8 md:h-9 w-auto object-contain"
               loading="eager"
               decoding="async"
             />
+            <div className="leading-tight">
+              <p className="font-bold text-lg">Mona Go Elevator</p>
+              <p className="text-xs text-muted-foreground">Victory in Motion</p>
+            </div>
           </a>
         </div>
         <nav
