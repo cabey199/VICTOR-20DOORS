@@ -270,16 +270,10 @@ export default function Contact() {
                   Get Directions
                 </a>
                 <a
-                  href="tel:+251941183695"
+                  href="tel:+251977588207"
                   className="rounded-md border px-3 py-2 hover:bg-accent"
                 >
-                  Call +251 94 118 3695
-                </a>
-                <a
-                  href="tel:+251991227010"
-                  className="rounded-md border px-3 py-2 hover:bg-accent"
-                >
-                  Call +251 99 122 7010
+                  Call +251 977 588 207
                 </a>
                 <a
                   href="https://t.me/victordoorplc"
