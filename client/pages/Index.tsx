@@ -20,18 +20,15 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 
 const IMG = {
-  door1:
-    "https://images.pexels.com/photos/2564866/pexels-photo-2564866.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  door2:
-    "https://images.pexels.com/photos/5845681/pexels-photo-5845681.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  door3:
-    "https://images.pexels.com/photos/965878/pexels-photo-965878.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  elevCabin:
-    "https://images.pexels.com/photos/8243095/pexels-photo-8243095.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  elevButtons:
-    "https://images.pexels.com/photos/7706391/pexels-photo-7706391.jpeg?auto=compress&cs=tinysrgb&w=1600",
-  escalator:
-    "https://images.pexels.com/photos/3605255/pexels-photo-3605255.jpeg?auto=compress&cs=tinysrgb&w=1600",
+  // Doors
+  doorA: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F0bed01f0d3a14829bcb24d39d0ad26cd?format=webp&width=1600",
+  doorB: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F921bb1b7096044f0bea754b873cbe30f?format=webp&width=1600",
+  doorC: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F6acd3fd746bd422fadd0a01ed582d976?format=webp&width=1600",
+  doorD: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F9dfdc41fa8ab4696a88d7a10ceb3cc06?format=webp&width=1600",
+  // Elevators
+  elevCabinA: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F54a575ace73a4c3eac275ccb53c35e7d?format=webp&width=1600",
+  elevCabinB: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2Ff1d28ef89fd140b691bea379e704e1f6?format=webp&width=1600",
+  elevPanelA: "https://cdn.builder.io/api/v1/image/assets%2F2011eb17d4ef4e78b5785e909c9c2e55%2F0f164c1559a44b8bbf2f287ba47fe8dc?format=webp&width=1600",
 };
 
 function useAutoAdvance(api: any, delay = 4000) {
@@ -62,40 +59,40 @@ const featured = [
   {
     type: "door",
     title: "Luxury Steel Door – Oak Finish",
-    image: IMG.door1,
+    image: IMG.doorA,
     specs: "2x1m, sound-proof, fire-resistant",
-    price: "9,800 ETB/m²",
+    price: "17,700 ETB/m²",
   },
   {
     type: "door",
     title: "Security Iron Door – Walnut",
-    image: IMG.door2,
+    image: IMG.doorB,
     specs: "1.9x0.9m, reinforced frame",
-    price: "9,550 ETB/m²",
+    price: "17,700 ETB/m²",
   },
   {
     type: "elevator",
     title: "Mona-Go KRC Passenger Elevator",
-    image: IMG.elevCabin,
+    image: IMG.elevCabinA,
     specs: "800 kg, 1.6 m/s, ARD/UPS",
     price: "Request Quote",
   },
   {
     type: "elevator",
-    title: "KRC Escalator – Commercial",
-    image: IMG.escalator,
-    specs: "Heavy-duty, energy saving",
+    title: "KRC Commercial Elevator",
+    image: IMG.elevCabinB,
+    specs: "1000 kg, 2.0 m/s, ERD & UPS",
     price: "Request Quote",
   },
 ];
 
 const portfolio = [
-  IMG.door1,
-  IMG.door2,
-  IMG.door3,
-  IMG.elevCabin,
-  IMG.elevButtons,
-  IMG.escalator,
+  IMG.doorA,
+  IMG.doorB,
+  IMG.doorD,
+  IMG.elevCabinA,
+  IMG.elevCabinB,
+  IMG.doorC,
 ];
 
 const testimonials = [
@@ -107,7 +104,7 @@ const testimonials = [
   {
     name: "Abel G.",
     body: "Our office elevator is smooth and quiet. Fast delivery and professional team.",
-    image: IMG.elevCabin,
+    image: IMG.elevCabinA,
   },
   {
     name: "Selam A.",
@@ -121,7 +118,7 @@ export default function Index() {
   useAutoAdvance(api, 5000);
 
   const heroSlides = useMemo(
-    () => [IMG.elevCabin, IMG.door1, IMG.escalator],
+    () => [IMG.elevCabinA, IMG.doorA, IMG.elevCabinB],
     [],
   );
 
