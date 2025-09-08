@@ -17,6 +17,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion";
 import { CheckCircle2 } from "lucide-react";
+import { toast } from "@/components/ui/use-toast";
 
 export default function Contact() {
   const [step, setStep] = useState(0);
@@ -48,7 +49,12 @@ export default function Contact() {
         message,
       }),
     });
-    if (res.ok) setSubmitted(true);
+    if (res.ok) {
+      toast({ title: "Thank you!", description: "Your message was sent successfully." });
+      setSubmitted(true);
+    } else {
+      toast({ title: "Submission failed", description: "Please try again.", variant: "destructive" });
+    }
   }
 
   return (
