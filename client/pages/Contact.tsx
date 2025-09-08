@@ -50,10 +50,17 @@ export default function Contact() {
       }),
     });
     if (res.ok) {
-      toast({ title: "Thank you!", description: "Your message was sent successfully." });
+      toast({
+        title: "Thank you!",
+        description: "Your message was sent successfully.",
+      });
       setSubmitted(true);
     } else {
-      toast({ title: "Submission failed", description: "Please try again.", variant: "destructive" });
+      toast({
+        title: "Submission failed",
+        description: "Please try again.",
+        variant: "destructive",
+      });
     }
   }
 

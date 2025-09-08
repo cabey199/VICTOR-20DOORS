@@ -271,22 +271,37 @@ export default function Index() {
                           const fd = new FormData(formEl);
                           const body = Object.fromEntries(fd.entries());
                           try {
-                            const res = await fetch("https://formspree.io/f/mgvlrrrl", {
-                              method: "POST",
-                              headers: {
-                                Accept: "application/json",
-                                "Content-Type": "application/json",
+                            const res = await fetch(
+                              "https://formspree.io/f/mgvlrrrl",
+                              {
+                                method: "POST",
+                                headers: {
+                                  Accept: "application/json",
+                                  "Content-Type": "application/json",
+                                },
+                                body: JSON.stringify(body),
                               },
-                              body: JSON.stringify(body),
-                            });
+                            );
                             if (res.ok) {
-                              toast({ title: "Thanks!", description: "Your request was sent successfully." });
+                              toast({
+                                title: "Thanks!",
+                                description:
+                                  "Your request was sent successfully.",
+                              });
                               formEl.reset();
                             } else {
-                              toast({ title: "Submission failed", description: "Please try again.", variant: "destructive" });
+                              toast({
+                                title: "Submission failed",
+                                description: "Please try again.",
+                                variant: "destructive",
+                              });
                             }
                           } catch {
-                            toast({ title: "Network error", description: "Please try again.", variant: "destructive" });
+                            toast({
+                              title: "Network error",
+                              description: "Please try again.",
+                              variant: "destructive",
+                            });
                           }
                         }}
                         aria-label="Request quote form"
