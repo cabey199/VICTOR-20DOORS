@@ -15,8 +15,6 @@ import type { OrderRequestBody, OrderRequestResponse } from "@shared/api";
 import { toast } from "@/components/ui/use-toast";
 
 export function OrderRequestForm({ product }: { product: Product }) {
-  const [color, setColor] = useState<string>("");
-  const [finish, setFinish] = useState<string>("");
   const [size, setSize] = useState<string>("");
   const [capacityKg, setCapacityKg] = useState<number | undefined>(
     product.capacityKg,
@@ -47,8 +45,6 @@ export function OrderRequestForm({ product }: { product: Product }) {
         productTitle: product.title,
         productType: product.type,
         options: {
-          color: color || undefined,
-          finish: finish || undefined,
           size: size || undefined,
           capacityKg: isElevator ? capacityKg : undefined,
           floors: isElevator ? floors : undefined,
@@ -88,37 +84,6 @@ export function OrderRequestForm({ product }: { product: Product }) {
       aria-label="Order request form"
     >
       <div className="grid gap-3 md:grid-cols-2">
-        {!isElevator && (
-          <div>
-            <Label htmlFor="color">Color</Label>
-            <Select onValueChange={setColor}>
-              <SelectTrigger id="color">
-                <SelectValue placeholder="Select color" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="oak">Oak</SelectItem>
-                <SelectItem value="walnut">Walnut</SelectItem>
-                <SelectItem value="teak">Teak</SelectItem>
-                <SelectItem value="black">Black</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-        )}
-        {!isElevator && (
-          <div>
-            <Label htmlFor="finish">Finish</Label>
-            <Select onValueChange={setFinish}>
-              <SelectTrigger id="finish">
-                <SelectValue placeholder="Select finish" />
-              </SelectTrigger>
-              <SelectContent>
-                <SelectItem value="matte">Matte</SelectItem>
-                <SelectItem value="glossy">Glossy</SelectItem>
-                <SelectItem value="powder-coated">Powder-coated</SelectItem>
-              </SelectContent>
-            </Select>
-          </div>
-        )}
         {!isElevator && (
           <div className="md:col-span-2">
             <Label htmlFor="size">Size (e.g., 2.0 x 1.0 m)</Label>
