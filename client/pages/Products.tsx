@@ -59,7 +59,7 @@ export default function Products() {
         <div>
           <h1 className="text-2xl font-bold">Products Catalog</h1>
           <p className="text-sm text-muted-foreground">
-            Browse doors and elevators. Use filters, sort, and compare.
+            Official KRC Turkey partner • ISO & European standard • Free 1-year maintenance and 2-year warranty • Supply & install in 2 months
           </p>
         </div>
         <Tabs defaultValue="all">
